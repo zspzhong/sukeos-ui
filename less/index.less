@@ -1,0 +1,22 @@
+@import "./color";
+@import "./tool";
+
+@import "./modal";
+
+input {
+  margin: 0;
+  width: 100%;
+  font-size: 14px;
+  border: 0 solid @color-bk;
+  background-color: @color-bk;
+  height: 30px;
+  line-height: 20px;
+  padding: 5px 20px;
+  .border-box();
+  border-radius: 15px;
+
+  &:focus {
+    border: 0 solid @color-bk;
+    outline: none;
+  }
+}

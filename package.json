@@ -1,0 +1,28 @@
+{
+  "name": "sukeos-ui",
+  "version": "1.0.0",
+  "description": "sukeos ui",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zspzhong/sukeos-ui.git"
+  },
+  "keywords": [
+    "sukeos",
+    "ui"
+  ],
+  "author": "zhongzsp@aliyun.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zspzhong/sukeos-ui/issues"
+  },
+  "homepage": "https://github.com/zspzhong/sukeos-ui#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-less": "^4.0.1",
+    "gulp-plumber": "^1.2.0"
+  }
+}

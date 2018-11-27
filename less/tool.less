@@ -1,0 +1,57 @@
+.translate(@x,@y) {
+    transform: translate(@x,@y);
+    -ms-transform: translate(@x,@y);
+    -moz-transform: translate(@x,@y);
+    -webkit-transform: translate(@x,@y);
+    -o-transform: translate(@x,@y);
+}
+
+.rotate(@deg: 0deg) {
+    -moz-transform:rotate(@deg);
+    -ms-transform:rotate(@deg);
+    -o-transform:rotate(@deg);
+    -webkit-transform:rotate(@deg);
+    transform:rotate(@deg);
+}
+.border-box() {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing:border-box;
+}
+.flex-box() {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+}
+.flex(@flex:1) {
+    -webkit-box-flex: @flex;
+    -webkit-flex: @flex;
+    flex: @flex;
+}
+.transition(@property, @duration, @timing, @delay:0) {
+    transition-property: @property;
+    transition-duration: @duration;
+    transition-timing-function: @timing;
+    transition-delay: @delay;
+
+    -moz-transition-property: @property;
+    -moz-transition-duration: @duration;
+    -moz-transition-timing-function: @timing;
+    -moz-transition-delay: @delay;
+
+    -o-transition-property: @property;
+    -o-transition-duration: @duration;
+    -o-transition-timing-function: @timing;
+    -o-transition-delay: @delay;
+
+    -webkit-transition-property: @property;
+    -webkit-transition-duration: @duration;
+    -webkit-transition-timing-function: @timing;
+    -webkit-transition-delay: @delay;
+
+    -ms-transition-property: @property;
+    -ms-transition-duration: @duration;
+    -ms-transition-timing-function: @timing;
+    -ms-transition-delay: @delay;
+}

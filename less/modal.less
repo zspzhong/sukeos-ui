@@ -1,0 +1,111 @@
+@import "./color";
+@import "./tool";
+
+.modal-page {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1001;
+
+  &>div {
+    position: absolute;
+    background-color: #fff;
+    width: 600px;
+    min-height: 100px;
+    top: 50%;
+    left: 50%;
+    .translate(-50%, -50%);
+    padding: 10px 0;
+    overflow: hidden;
+  }
+  .modal-title {
+    padding-left: 30px;
+    font-size: 18px;
+    line-height: 40px;
+    text-align: left;
+  }
+  .model-body {
+    overflow: auto;
+    max-height: 500px;
+    padding: 0 30px;
+    &.foot {
+      padding-bottom: 50px;
+    }
+  }
+  .model-foot {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    height: 50px;
+    .border-box();
+    padding: 10px 30px;
+    text-align: center;
+    font-size: 0;
+    &>div {
+      display: inline-block;
+      vertical-align: top;
+      font-size: 14px;
+      line-height: 30px;
+      height: 30px;
+      padding: 0 30px;
+      background-color: @color-bk;
+      .border-box();
+      border-radius: 15px;
+      cursor: pointer;
+      border: 1px solid @color-bk;
+    }
+  }
+  .model-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 0 0 0 15px;
+    .transition(all, 0.5s, ease);
+    &:hover {
+      background-color: rgba(44, 62, 80, 0.2);
+    }
+  }
+}
+
+.prompt-page {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+  &>div {
+    position: absolute;
+    background-color: #fff;
+    width: 500px;
+    top: 40%;
+    left: 50%;
+    .border-box();
+    text-align: left;
+    padding: 10px 20px;
+    .translate(-50%, -50%);
+
+    .title {
+      font-size: 16px;
+      line-height: 40px;
+    }
+
+    .bt-list {
+      font-size: 0;
+      text-align: right;
+      padding-top: 20px;
+    }
+  }
+}
