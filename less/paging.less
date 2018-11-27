@@ -1,0 +1,79 @@
+@import "./color";
+@import "./tool";
+
+.paging-page {
+  font-size: 0;
+  text-align: left;
+  &>div {
+    font-size: 14px;
+    display: inline-block;
+    vertical-align: top;
+    line-height: 32px;
+    height: 30px;
+    margin-right: 20px;
+  }
+  .page-items {
+    font-size: 0;
+    height: 30px;
+    .border-box();
+
+    .left-page,
+    .right-page {
+      display: inline-block;
+      font-size: 14px;
+      vertical-align: top;
+      text-align: center;
+      line-height: 32px;
+      height: 30px;
+      width: 30px;
+      cursor: pointer;
+      background-color: @color-bk-1;
+      .transition(all, 0.5s, ease);
+
+      &.active,
+      &:hover {
+        background-color: @color-main-1;
+      }
+    }
+
+    .left-page {
+      border-radius: 15px 0 0 15px;
+    }
+
+    .right-page {
+      border-radius: 0 15px 15px 0;
+    }
+
+    .page-list {
+      display: inline-block;
+      vertical-align: top;
+      overflow: hidden;
+      position: relative;
+      height: 30px;
+      &>div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 30px;
+        .transition(all, 0.5s, ease);
+        &>div {
+          display: inline-block;
+          font-size: 14px;
+          vertical-align: top;
+          text-align: center;
+          line-height: 32px;
+          height: 30px;
+          width: 30px;
+          cursor: pointer;
+          background-color: @color-bk-1;
+          .transition(all, 0.5s, ease);
+
+          &.active,
+          &:hover {
+            background-color: @color-main-1;
+          }
+        }
+      }
+    }
+  }
+}

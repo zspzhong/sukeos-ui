@@ -28,7 +28,7 @@ export default {
       this.$emit('input', value)
     },
     click () {
-      this.$emit('click', this.value)
+      this.$emit('add', this.value)
     }
   }
 }
