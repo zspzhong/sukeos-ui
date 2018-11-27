@@ -1,6 +1,6 @@
 {
   "name": "sukeos-ui",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "sukeos ui",
   "main": "index.js",
   "scripts": {
