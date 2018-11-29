@@ -1,5 +1,5 @@
 <template>
-  <div class="x-textarea">
+  <div class="sk-textarea">
     <textarea type="text" :rows="data.rows" :value="temp" :placeholder="placeholder" @input="input"></textarea>
   </div>
 </template>
