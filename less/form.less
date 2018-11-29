@@ -1,0 +1,317 @@
+@import "./color";
+@import "./tool";
+
+.sk-form {
+  text-align: left;
+
+  .sk-form-items{
+    .sk-form-row {
+      line-height: 30px;
+      margin: 10px 0;
+      font-size: 0;
+      min-height: 30px;
+      position: relative;
+
+      &.sk-none {
+        display: none;
+      }
+
+      label {
+        width: 80px;
+        display: inline-block;
+        font-size: 14px;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      &>div {
+        width: 100%;
+        .border-box();
+      }
+
+      .sk-date {
+        height: 30px;
+        position: relative;
+        overflow: hidden;
+        .transition(all, 0.5s, ease);
+
+        &.active {
+          height: 250px;
+        }
+        .date-input {
+          background-color: rgb(232,234,237);
+          border-radius: 15px;
+          height: 30px;
+          font-size: 14px;
+          line-height: 30px;
+          padding-left: 20px;
+        }
+        .date-picker {
+          background-color: #fff;
+          z-index: 1100;
+          margin-top: 5px;
+          width: 210px;
+          border: 1px solid @color-solid;
+          overflow: hidden;
+          &>div {
+            width: 1050px;
+            .transition(all, 0.5s, ease);
+            &.year {
+              .translate(0, 0);
+            }
+            &.month {
+              .translate(-210px, 0);
+            }
+            &.hours {
+              .translate(-630px, 0);
+            }
+            &.minutes {
+              .translate(-840px, 0);
+            }
+            &.day {
+              .translate(-420px, 0);
+            }
+            &>div {
+              width: 210px;
+              height: 213px;
+              display: inline-block;
+              vertical-align: top;
+            }
+          }
+        }
+        .year-picker {
+          text-align: center;
+          .year-items {
+            &>div {
+              display: inline-block;
+              font-size: 14px;
+              line-height: 30px;
+              width: 70px;
+              cursor: pointer;
+
+              &:hover {
+                background-color: @color-bk;
+              }
+              &.active {
+                background-color: @color-bk-1;
+              }
+            }
+          }
+        }
+        .month-picker {
+          .month-items {
+            text-align: center;
+            &>div {
+              display: inline-block;
+              font-size: 14px;
+              line-height: 30px;
+              width: 70px;
+              cursor: pointer;
+
+              &:hover {
+                background-color: @color-bk;
+              }
+              &.active {
+                background-color: @color-bk-1;
+              }
+            }
+          }
+        }
+        .picker-top {
+          font-size: 0;
+          text-align: center;
+          border-bottom: 1px solid @color-solid;
+          height: 30px;
+          position: relative;
+          &>div {
+            font-size: 14px;
+            display: inline-block;
+            cursor: pointer;
+
+            &.i-left {
+              position: absolute;
+              top: 0;
+              left: 0;
+              padding: 0 10px;
+
+              &:hover {
+                background-color: @color-bk;
+              }
+            }
+            &.i-right {
+              float: right;
+              padding: 0 10px;
+
+              &:hover {
+                background-color: @color-bk;
+              }
+            }
+          }
+        }
+        .hours-picker {
+          .hours-items {
+            text-align: center;
+            &>div {
+              display: inline-block;
+              font-size: 14px;
+              line-height: 30px;
+              width: 35px;
+              cursor: pointer;
+
+              &:hover {
+                background-color: @color-bk;
+              }
+              &.active {
+                background-color: @color-bk-1;
+              }
+            }
+          }
+        }
+        .minutes-picker {
+          .minutes-items {
+            text-align: center;
+            &>div {
+              display: inline-block;
+              font-size: 14px;
+              line-height: 30px;
+              width: 70px;
+              cursor: pointer;
+
+              &:hover {
+                background-color: @color-bk;
+              }
+              &.active {
+                background-color: @color-bk-1;
+              }
+            }
+          }
+        }
+        .day-picker {
+          .day-items {
+            font-size: 0;
+            &>div {
+              text-align: center;
+              display: inline-block;
+              vertical-align: top;
+              width: 30px;
+              height: 30px;
+              font-size: 14px;
+              line-height: 30px;
+              cursor: pointer;
+
+              &:hover {
+                background-color: @color-bk;
+              }
+              &.active {
+                background-color: @color-bk-1;
+              }
+
+              &.top {
+                &:hover {
+                  background-color: #fff;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .sk-upload {
+        width: 150px;
+        height: 80px;
+        background-color: rgb(232,234,237);
+        border: 5px solid rgb(232,234,237);
+        border-radius: 15px;
+        position: relative;
+        overflow: hidden;
+
+        i {
+          background-image: url('../src/icon/i-upload.svg');
+          width: 50px;
+          height: 50px;
+          display: inline-block;
+          background-size: 100%;
+          top: 50%;
+          left: 50%;
+          position: absolute;
+          .translate(-50%, -50%);
+        }
+
+        img {
+          max-height: 100%;
+          max-width: 100%;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          .translate(-50%, -50%);
+        }
+
+        input {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          opacity: 0;
+        }
+      }
+
+      .sk-textarea {
+        display: inline-flex;
+      }
+
+      .sk-input {
+        overflow: hidden;
+        height: 30px;
+      }
+
+      .sk-radio {
+        line-height: 30px;
+        height: 30px;
+        padding-left: 10px;
+        &>div {
+          display: inline-block;
+          margin-right: 20px;
+          font-size: 14px;
+          cursor: pointer;
+          position: relative;
+          padding-left: 20px;
+          &:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 14px;
+            height: 14px;
+            .translate(0, -50%); 
+            display: inline-block;
+            border: 1px solid @color-main;
+            vertical-align: top;
+            .border-box();
+          }
+
+          &:after {
+            width: 8px;
+            height: 8px;
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            display: inline-block;
+            background-color: @color-main;
+            .translate(3px, -50%);
+            .transition(all, 0.5s, ease);
+            opacity: 0; 
+          }
+
+          &.active {
+            &:after {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+}

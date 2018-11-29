@@ -1,12 +1,12 @@
 <template>
   <div class="modal-page" v-if="showStatus" @click="close()">
     <div :style="{'width': width}" @click.stop="">
-      <div class="model-close" @click="close()">X</div>
+      <div class="modal-close" @click="close()">X</div>
       <div class="modal-title">{{title}}</div>
-      <div class="model-body" :class="{'foot': foot}">
+      <div class="modal-body" :class="{'foot': foot}">
         <slot></slot>
       </div>
-      <div class="model-foot" v-if="foot">
+      <div class="modal-foot" v-if="foot">
         <slot name="foot"></slot>
       </div>
     </div>
