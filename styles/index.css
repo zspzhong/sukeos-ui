@@ -1,4 +1,4 @@
-.modal-page {
+.sk-modal-page {
   width: 100%;
   height: 100%;
   position: fixed;
@@ -7,7 +7,7 @@
   background-color: rgba(0, 0, 0, 0.4);
   z-index: 1001;
 }
-.modal-page > div {
+.sk-modal-page > div {
   position: absolute;
   background-color: #fff;
   width: 600px;
@@ -22,21 +22,21 @@
   padding: 10px 0;
   overflow: hidden;
 }
-.modal-page .modal-title {
+.sk-modal-page .sk-modal-title {
   padding-left: 30px;
   font-size: 18px;
   line-height: 40px;
   text-align: left;
 }
-.modal-page .modal-body {
+.sk-modal-page .sk-modal-body {
   overflow: auto;
   max-height: 500px;
   padding: 0 30px;
 }
-.modal-page .modal-body.foot {
+.sk-modal-page .sk-modal-body.sk-modal-body-foot {
   padding-bottom: 50px;
 }
-.modal-page .modal-foot {
+.sk-modal-page .sk-modal-foot {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -51,7 +51,7 @@
   text-align: center;
   font-size: 0;
 }
-.modal-page .modal-foot > div {
+.sk-modal-page .sk-modal-foot > div {
   display: inline-block;
   vertical-align: top;
   font-size: 14px;
@@ -67,7 +67,7 @@
   cursor: pointer;
   border: 1px solid #F1F3F4;
 }
-.modal-page .modal-close {
+.sk-modal-page .sk-modal-close {
   position: absolute;
   top: 0;
   right: 0;
@@ -99,7 +99,7 @@
   -ms-transition-timing-function: ease;
   -ms-transition-delay: 0;
 }
-.modal-page .modal-close:hover {
+.sk-modal-page .sk-modal-close:hover {
   background-color: rgba(44, 62, 80, 0.2);
 }
 .sk-input-buttom.add-buttom {
