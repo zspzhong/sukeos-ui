@@ -11,6 +11,7 @@
 </template>
 
 <script>
+export default {
   props: {
     menu: {
       type: Array,
@@ -28,4 +29,5 @@
       
     }
   }
+}
 </script>
