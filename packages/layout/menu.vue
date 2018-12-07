@@ -1,5 +1,5 @@
 <template>
-	<div class="sk-menu">
+	<div class="sk-layout-menu">
    <div v-for="(item, key) in menu"
    :key="key"
    @click="openUrl(item.path)"
