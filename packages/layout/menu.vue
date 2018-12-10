@@ -4,8 +4,7 @@
    :key="key"
    @click="openUrl(item.path)"
    :class="{'active': path === item.path}">
-     <i :class="item.icom"></i>
-     <div>{{item.name}}</div>
+     <i :class="item.icom"></i>{{item.name}}
    </div> 
   </div>
 </template>
