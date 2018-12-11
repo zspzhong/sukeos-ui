@@ -2,8 +2,10 @@
   <div class="sk-layout">
     <Menu :menu="menu" :path="path"></Menu>
     <div class="sk-layout-content">
-      <SubMenu :menu="subMenu" :path="path"></SubMenu>
-      <slot></slot>
+      <div :class="{'sk-layout-hidden-sub-menu': subMenu.length === 0}">
+        <SubMenu :menu="subMenu" :path="path"></SubMenu>
+        <slot></slot>
+      </div>
     </div>
   </div>
 </template>

@@ -8,92 +8,146 @@
   top: 0;
   left: 0;
 
+  &.sk-layout-show-menu {
+    .sk-layout-menu{
+      width: 220px;
+
+      .sk-layout-menu-body {
+        width: 220px;
+      }
+    }
+    .sk-layout-content{
+      padding-left: 220px;
+    }
+  }
+
   .sk-layout-menu {
-    position: absolute;
+    .transition(all, 0.5s, ease);
     width: 50px;
     height: 100%;
-    color: #fff;
-    padding-top: 50px;
-    .transition(all, 0.5s, ease);
-    z-index: 1000;
-    overflow: hidden;
-    background-image: url(../src/img/menu-bk.jpeg);
-
-    &:hover {
-      width: 220px;
-    }
-
-    &>div {
-      padding-left: 50px;
-      height: 40px;
-      line-height: 40px;
-      cursor: pointer;
-      width: 220px;
-      .border-box();
-      font-size: 12px;
-      position: relative;
+    display: inline-block;
+    vertical-align: top;
+    .sk-layout-menu-body {
+      position: absolute;
+      width: 50px;
+      height: 100%;
+      color: #fff;
+      padding-top: 50px;
       .transition(all, 0.5s, ease);
-      cursor: pointer;
-      .translate(-10px, 0);
+      z-index: 1000;
+      overflow: hidden;
+      background-image: url(../src/img/menu-bk.jpeg);
 
-      &.active {
-        background-color: rgba(255, 255, 255, 0.3);
-      }
       &:hover {
-        .translate(0px, 0);
-        background-color: rgba(255, 255, 255, 0.2);
+        width: 220px;
       }
 
-      i {
-        width: 20px;
-        height: 20px;
-        position: absolute;
-        top: 10px;
-        left: 35px;
-        background-size: 100%;
-        background-repeat: no-repeat;
+      &>div {
+        width: 220px;
+        padding-left: 50px;
+        height: 40px;
+        line-height: 40px;
+        .transition(all, 0.5s, ease);
+        cursor: pointer;
+        position: relative;
+        font-size: 14px;
+        .border-box();
 
-        &.home {
-          background-image: url('../icon/i-home.svg')
+        &.active {
+          background-color: rgba(255, 255, 255, 0.3);
         }
-        &.employee {
-          background-image: url('../icon/i-employee.svg')
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.2);
         }
-        &.logs {
-          background-image: url('../icon/i-logs.svg');
-        }
-        &.logout {
-          background-image: url('../icon/i-logout.svg');
-        }
-        &.account {
-          background-image: url('../icon/i-account.svg');
+
+        i {
+          width: 20px;
+          height: 20px;
+          position: absolute;
+          top: 10px;
+          left: 15px;
+          background-size: 100%;
+          background-repeat: no-repeat;
+
+          &.home {
+            background-image: url('../src/icon/i-home.svg');
+          }
+          &.employee {
+            background-image: url('../src/icon/i-employee.svg');
+          }
+          &.logs {
+            background-image: url('../src/icon/i-logs.svg');
+          }
+          &.logout {
+            background-image: url('../src/icon/i-logout.svg');
+          }
+          &.auth {
+            background-image: url('../src/icon/i-auth.svg');
+          }
+          &.user {
+            background-image: url('../src/icon/i-user.svg');
+          }
+          &.teamwork {
+            background-image: url('../src/icon/i-teamwork.svg');
+          }
+          &.attend {
+            background-image: url('../src/icon/i-attend.svg');
+          }
+          &.statistics {
+            background-image: url('../src/icon/i-statistics.svg');
+          }
+          &.approval {
+            background-image: url('../src/icon/i-approval.svg');
+          }
         }
       }
     }
   }
   .sk-layout-content {
-    padding: 20px 20px 20px 250px;
+    padding-left: 50px;
     width: 100%;
     height: 100%;
-    .border-box();
+    display: inline-block;
+    vertical-align: top;
+    position: absolute;
+    top: 0;
+    left: 0;
     .transition(all, 0.5s, ease);
-
-    .sk-layout-sub-menu {
-      position: absolute;
-      top: 0;
-      left: 50px;
-      width: 170px;
+    .border-box();
+    &>div{
+      padding: 20px 20px 20px 190px;
+      width: 100%;
+      position: relative;
       height: 100%;
-      padding-top: 10px;
-      background-color: @color-bk-menu;
-      &>div {
-        padding-left: 20px;
-        line-height: 40px;
-        font-size: 14px;
-        cursor: pointer;
+      .transition(all, 0.5s, ease);
+      .border-box();
+
+      &.sk-layout-hidden-sub-menu {
+        padding: 20px 20px 20px 20px;
+
+        .sk-layout-sub-menu {
+          width: 0;
+        }
+      }
+
+      .sk-layout-sub-menu {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 170px;
+        height: 100%;
+        padding-top: 10px;
         .transition(all, 0.5s, ease);
-        &:hover {
-          background-color: #fff;
+        background-color: @color-bk-menu;
+        &>div {
+          padding-left: 20px;
+          line-height: 40px;
+          font-size: 14px;
+          cursor: pointer;
+          .transition(all, 0.5s, ease);
+          &:hover {
+            background-color: #fff;
+          }
         }
       }
     }

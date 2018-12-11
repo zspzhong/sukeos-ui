@@ -1,5 +1,5 @@
 <template>
-  <div class="sk-layout-sub-menu" :class="{'hidden-sub-menu': menu.length === 0}">
+  <div class="sk-layout-sub-menu">
     <div class="title">{{name}}</div>
     <div v-for="(item, index) in menu"
     :key="index"
