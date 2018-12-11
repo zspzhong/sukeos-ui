@@ -724,13 +724,50 @@
   padding-left: 50px;
   height: 40px;
   line-height: 40px;
-  cursor: pointer;
   width: 220px;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   font-size: 12px;
+  position: relative;
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+  transition-delay: 0;
+  -moz-transition-property: all;
+  -moz-transition-duration: 0.5s;
+  -moz-transition-timing-function: ease;
+  -moz-transition-delay: 0;
+  -o-transition-property: all;
+  -o-transition-duration: 0.5s;
+  -o-transition-timing-function: ease;
+  -o-transition-delay: 0;
+  -webkit-transition-property: all;
+  -webkit-transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease;
+  -webkit-transition-delay: 0;
+  -ms-transition-property: all;
+  -ms-transition-duration: 0.5s;
+  -ms-transition-timing-function: ease;
+  -ms-transition-delay: 0;
+  cursor: pointer;
+  transform: translate(-10px, 0);
+  -ms-transform: translate(-10px, 0);
+  -moz-transform: translate(-10px, 0);
+  -webkit-transform: translate(-10px, 0);
+  -o-transform: translate(-10px, 0);
+}
+.sk-layout .sk-layout-menu > div.active {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.sk-layout .sk-layout-menu > div:hover {
+  transform: translate(0px, 0);
+  -ms-transform: translate(0px, 0);
+  -moz-transform: translate(0px, 0);
+  -webkit-transform: translate(0px, 0);
+  -o-transform: translate(0px, 0);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 .sk-layout .sk-layout-menu > div i {
   width: 20px;

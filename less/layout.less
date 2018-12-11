@@ -31,6 +31,18 @@
       width: 220px;
       .border-box();
       font-size: 12px;
+      position: relative;
+      .transition(all, 0.5s, ease);
+      cursor: pointer;
+      .translate(-10px, 0);
+
+      &.active {
+        background-color: rgba(255, 255, 255, 0.3);
+      }
+      &:hover {
+        .translate(0px, 0);
+        background-color: rgba(255, 255, 255, 0.2);
+      }
 
       i {
         width: 20px;
