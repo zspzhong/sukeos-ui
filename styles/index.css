@@ -730,6 +730,31 @@
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
+  font-size: 12px;
+}
+.sk-layout .sk-layout-menu > div i {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 10px;
+  left: 35px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+.sk-layout .sk-layout-menu > div i.home {
+  background-image: url('../icon/i-home.svg');
+}
+.sk-layout .sk-layout-menu > div i.employee {
+  background-image: url('../icon/i-employee.svg');
+}
+.sk-layout .sk-layout-menu > div i.logs {
+  background-image: url('../icon/i-logs.svg');
+}
+.sk-layout .sk-layout-menu > div i.logout {
+  background-image: url('../icon/i-logout.svg');
+}
+.sk-layout .sk-layout-menu > div i.account {
+  background-image: url('../icon/i-account.svg');
 }
 .sk-layout .sk-layout-content {
   padding: 20px 20px 20px 250px;

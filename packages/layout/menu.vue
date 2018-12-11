@@ -6,7 +6,11 @@
    :class="{'active': path === item.path}">
      <i :class="item.icom"></i>
      <div>{{item.name}}</div>
-   </div> 
+   </div>
+   <div class="logout" @click="logout">
+    <i class="logout"></i>
+    <div>退出</div>
+  </div>
   </div>
 </template>
 

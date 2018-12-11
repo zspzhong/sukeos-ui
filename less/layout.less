@@ -30,6 +30,33 @@
       cursor: pointer;
       width: 220px;
       .border-box();
+      font-size: 12px;
+
+      i {
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: 10px;
+        left: 35px;
+        background-size: 100%;
+        background-repeat: no-repeat;
+
+        &.home {
+          background-image: url('../icon/i-home.svg')
+        }
+        &.employee {
+          background-image: url('../icon/i-employee.svg')
+        }
+        &.logs {
+          background-image: url('../icon/i-logs.svg');
+        }
+        &.logout {
+          background-image: url('../icon/i-logout.svg');
+        }
+        &.account {
+          background-image: url('../icon/i-account.svg');
+        }
+      }
     }
   }
   .sk-layout-content {
