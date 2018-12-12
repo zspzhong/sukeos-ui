@@ -1,5 +1,5 @@
 <template>
-  <div class="sk-layout">
+  <div class="sk-layout" :class="{'sk-layout-show-menu': showMenu}">
     <Menu :menu="menu" :path="path"></Menu>
     <div class="sk-layout-content">
       <div :class="{'sk-layout-hidden-sub-menu': subMenu.length === 0}">
@@ -34,6 +34,10 @@ export default {
     path: {
       type: String,
       default: ''
+    },
+    showMenu: {
+      type: Boolean,
+      default: false
     }
   }
 }
