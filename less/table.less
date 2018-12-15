@@ -1,0 +1,75 @@
+@import "./color";
+@import "./tool";
+
+.sk-table {
+  text-align: left;
+  display: inline-block;
+
+  .sk-table-top {
+    font-size: 0;
+    .transition(all, 0.5s, ease);
+    border-radius: 15px;
+    padding: 0 10px;
+    overflow: hidden;
+    height: 30px;
+    border: 0 solid @color-solid;
+    margin-bottom: 0;
+
+    &>div {
+      display: inline-block;
+      vertical-align: top;
+      line-height: 30px;
+      font-size: 14px;
+      padding-left: 10px;
+      overflow: hidden;
+      text-overflow:ellipsis;
+      white-space: nowrap;
+    }
+  }
+  .sk-table-row {
+    font-size: 0;
+    border: 1px solid @color-solid;
+    margin-bottom: 10px;
+    .transition(all, 0.5s, ease);
+    border-radius: 15px;
+    padding: 0 10px;
+    overflow: hidden;
+    height: 30px;
+
+    &:hover {
+      background-color: @color-bk;
+    }
+
+    &>div {
+      display: inline-block;
+      vertical-align: top;
+      line-height: 30px;
+      font-size: 14px;
+      padding-left: 10px;
+      overflow: hidden;
+      text-overflow:ellipsis;
+      white-space: nowrap;
+
+      .none {
+        display: none;
+      }
+
+      &.sk-table-body-operation {
+        span {
+          margin-right: 10px;
+          cursor: pointer;
+          display: inline-block;
+          color: @color-font-bt;
+        }
+
+        .disabled {
+          color: @color-font-bt-disabled;
+        }
+
+        .none {
+          display: none;
+        }
+      }
+    }
+  }
+}
