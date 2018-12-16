@@ -139,7 +139,7 @@
 .sk-input-buttom.add-buttom > div:hover {
   background-color: #e8eaed;
 }
-.prompt-page {
+.sk-prompt {
   width: 100%;
   height: 100%;
   position: fixed;
@@ -148,7 +148,7 @@
   background-color: rgba(0, 0, 0, 0.2);
   z-index: 1001;
 }
-.prompt-page > div {
+.sk-prompt > div {
   position: absolute;
   background-color: #fff;
   width: 500px;
@@ -166,14 +166,29 @@
   -webkit-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
 }
-.prompt-page > div .title {
+.sk-prompt > div .sk-prompt-title {
   font-size: 16px;
   line-height: 40px;
 }
-.prompt-page > div .bt-list {
+.sk-prompt > div .sk-prompt-bt-list {
   font-size: 0;
   text-align: right;
   padding-top: 20px;
+}
+.sk-prompt > div .sk-prompt-bt-list > div {
+  height: 30px;
+  background-color: #e8eaed;
+  font-size: 14px;
+  line-height: 28px;
+  padding: 0 24px;
+  margin-right: 10px;
+  border: 1px solid rgba(44, 62, 80, 0.28);
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  display: inline-block;
+  border-radius: 15px;
 }
 .paging-page {
   font-size: 0;
