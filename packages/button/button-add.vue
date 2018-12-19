@@ -1,6 +1,6 @@
 <template>
-  <button class="sk-button" @click="click">
-    <span><slot></slot></span>
+  <button class="sk-button sk-bt-add" @click="click">
+    <span>+</span>
   </button>
 </template>
 

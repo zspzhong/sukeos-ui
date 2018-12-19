@@ -119,6 +119,7 @@
       width: 100%;
       position: relative;
       height: 100%;
+      overflow: auto;
       .transition(all, 0.5s, ease);
       .border-box();
 
@@ -131,9 +132,9 @@
       }
 
       .sk-layout-sub-menu {
-        position: absolute;
+        position: fixed;
         top: 0;
-        left: 0;
+        left: 50px;
         width: 170px;
         height: 100%;
         padding-top: 10px;

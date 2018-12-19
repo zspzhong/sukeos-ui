@@ -36,11 +36,23 @@
         overflow: hidden;
         .transition(all, 0.5s, ease);
 
+        .sk-date-remove {
+          display: inline-block;
+          position: absolute;
+          top: 0;
+          right: 0;
+          padding: 0 15px;
+          height: 30px;
+          line-height: 30px;
+          font-size: 12px;
+          border-radius: 0 15px 15px 0;
+        }
+
         &.active {
           height: 250px;
         }
         .date-input {
-          background-color: rgb(232,234,237);
+          background-color: @color-bk;
           border-radius: 15px;
           height: 30px;
           font-size: 14px;
@@ -96,6 +108,18 @@
               &.active {
                 background-color: @color-bk-1;
               }
+            }
+          }
+          .year-chang {
+            font-size: 0;
+            text-align: center;
+            line-height: 30px;
+            &>div {
+              cursor: pointer;
+              font-size: 14px;
+              width: 50%;
+              display: inline-block;
+              vertical-align: top;
             }
           }
         }

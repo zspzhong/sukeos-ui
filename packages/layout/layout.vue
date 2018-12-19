@@ -1,6 +1,6 @@
 <template>
   <div class="sk-layout" :class="{'sk-layout-show-menu': showMenu}">
-    <Menu :menu="menu" :path="path"></Menu>
+    <Menu :menu="menu" :path="path" @logout="logout"></Menu>
     <div class="sk-layout-content">
       <div :class="{'sk-layout-hidden-sub-menu': subMenu.length === 0}">
         <SubMenu :menu="subMenu" :path="path"></SubMenu>
@@ -38,6 +38,11 @@ export default {
     showMenu: {
       type: Boolean,
       default: false
+    }
+  },
+  methods: {
+    logout () {
+      this.$emit('logout')
     }
   }
 }

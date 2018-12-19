@@ -102,43 +102,6 @@
 .sk-modal-page .sk-modal-close:hover {
   background-color: rgba(44, 62, 80, 0.2);
 }
-.sk-input-buttom.add-buttom {
-  position: relative;
-}
-.sk-input-buttom.add-buttom > div {
-  position: absolute;
-  top: 0;
-  right: 0;
-  text-align: center;
-  width: 30px;
-  line-height: 30px;
-  cursor: pointer;
-  border-radius: 0 15px 15px 0;
-  border-left: 1px solid #e8eaed;
-  transition-property: all;
-  transition-duration: 0.5s;
-  transition-timing-function: ease;
-  transition-delay: 0;
-  -moz-transition-property: all;
-  -moz-transition-duration: 0.5s;
-  -moz-transition-timing-function: ease;
-  -moz-transition-delay: 0;
-  -o-transition-property: all;
-  -o-transition-duration: 0.5s;
-  -o-transition-timing-function: ease;
-  -o-transition-delay: 0;
-  -webkit-transition-property: all;
-  -webkit-transition-duration: 0.5s;
-  -webkit-transition-timing-function: ease;
-  -webkit-transition-delay: 0;
-  -ms-transition-property: all;
-  -ms-transition-duration: 0.5s;
-  -ms-transition-timing-function: ease;
-  -ms-transition-delay: 0;
-}
-.sk-input-buttom.add-buttom > div:hover {
-  background-color: #e8eaed;
-}
 .sk-prompt {
   width: 100%;
   height: 100%;
@@ -189,12 +152,13 @@
   -ms-box-sizing: border-box;
   display: inline-block;
   border-radius: 15px;
+  cursor: pointer;
 }
-.paging-page {
+.sk-paging {
   font-size: 0;
   text-align: left;
 }
-.paging-page > div {
+.sk-paging > div {
   font-size: 14px;
   display: inline-block;
   vertical-align: top;
@@ -202,7 +166,7 @@
   height: 30px;
   margin-right: 20px;
 }
-.paging-page .page-items {
+.sk-paging .sk-page-items {
   font-size: 0;
   height: 30px;
   box-sizing: border-box;
@@ -210,8 +174,8 @@
   -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
 }
-.paging-page .page-items .left-page,
-.paging-page .page-items .right-page {
+.sk-paging .sk-page-items .sk-page-left-page,
+.sk-paging .sk-page-items .sk-page-right-page {
   display: inline-block;
   font-size: 14px;
   vertical-align: top;
@@ -242,26 +206,26 @@
   -ms-transition-timing-function: ease;
   -ms-transition-delay: 0;
 }
-.paging-page .page-items .left-page.active,
-.paging-page .page-items .right-page.active,
-.paging-page .page-items .left-page:hover,
-.paging-page .page-items .right-page:hover {
+.sk-paging .sk-page-items .sk-page-left-page.active,
+.sk-paging .sk-page-items .sk-page-right-page.active,
+.sk-paging .sk-page-items .sk-page-left-page:hover,
+.sk-paging .sk-page-items .sk-page-right-page:hover {
   background-color: rgba(44, 62, 80, 0.28);
 }
-.paging-page .page-items .left-page {
+.sk-paging .sk-page-items .sk-page-left-page {
   border-radius: 15px 0 0 15px;
 }
-.paging-page .page-items .right-page {
+.sk-paging .sk-page-items .sk-page-right-page {
   border-radius: 0 15px 15px 0;
 }
-.paging-page .page-items .page-list {
+.sk-paging .sk-page-items .sk-page-page-list {
   display: inline-block;
   vertical-align: top;
   overflow: hidden;
   position: relative;
   height: 30px;
 }
-.paging-page .page-items .page-list > div {
+.sk-paging .sk-page-items .sk-page-page-list > div {
   position: absolute;
   top: 0;
   left: 0;
@@ -287,7 +251,7 @@
   -ms-transition-timing-function: ease;
   -ms-transition-delay: 0;
 }
-.paging-page .page-items .page-list > div > div {
+.sk-paging .sk-page-items .sk-page-page-list > div > div {
   display: inline-block;
   font-size: 14px;
   vertical-align: top;
@@ -318,8 +282,8 @@
   -ms-transition-timing-function: ease;
   -ms-transition-delay: 0;
 }
-.paging-page .page-items .page-list > div > div.active,
-.paging-page .page-items .page-list > div > div:hover {
+.sk-paging .sk-page-items .sk-page-page-list > div > div.active,
+.sk-paging .sk-page-items .sk-page-page-list > div > div:hover {
   background-color: rgba(44, 62, 80, 0.28);
 }
 .sk-form {
@@ -375,11 +339,22 @@
   -ms-transition-timing-function: ease;
   -ms-transition-delay: 0;
 }
+.sk-form .sk-form-items .sk-form-row .sk-date .sk-date-remove {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 15px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 12px;
+  border-radius: 0 15px 15px 0;
+}
 .sk-form .sk-form-items .sk-form-row .sk-date.active {
   height: 250px;
 }
 .sk-form .sk-form-items .sk-form-row .sk-date .date-input {
-  background-color: #e8eaed;
+  background-color: #F1F3F4;
   border-radius: 15px;
   height: 30px;
   font-size: 14px;
@@ -473,6 +448,18 @@
 }
 .sk-form .sk-form-items .sk-form-row .sk-date .year-picker .year-items > div.active {
   background-color: #e8eaed;
+}
+.sk-form .sk-form-items .sk-form-row .sk-date .year-picker .year-chang {
+  font-size: 0;
+  text-align: center;
+  line-height: 30px;
+}
+.sk-form .sk-form-items .sk-form-row .sk-date .year-picker .year-chang > div {
+  cursor: pointer;
+  font-size: 14px;
+  width: 50%;
+  display: inline-block;
+  vertical-align: top;
 }
 .sk-form .sk-form-items .sk-form-row .sk-date .month-picker .month-items {
   text-align: center;
@@ -887,6 +874,7 @@
   width: 100%;
   position: relative;
   height: 100%;
+  overflow: auto;
   transition-property: all;
   transition-duration: 0.5s;
   transition-timing-function: ease;
@@ -919,9 +907,9 @@
   width: 0;
 }
 .sk-layout .sk-layout-content > div .sk-layout-sub-menu {
-  position: absolute;
+  position: fixed;
   top: 0;
-  left: 0;
+  left: 50px;
   width: 170px;
   height: 100%;
   padding-top: 10px;
@@ -1075,6 +1063,46 @@
 }
 .sk-table .sk-table-row > div.sk-table-body-operation .none {
   display: none;
+}
+.sk-bt-row {
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+.sk-button {
+  height: 30px;
+  background-color: #e8eaed;
+  border-radius: 15px;
+  cursor: pointer;
+  border: 1px solid rgba(44, 62, 80, 0.28);
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 14px;
+  line-height: 28px;
+  padding: 0 24px;
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+  transition-delay: 0;
+  -moz-transition-property: all;
+  -moz-transition-duration: 0.5s;
+  -moz-transition-timing-function: ease;
+  -moz-transition-delay: 0;
+  -o-transition-property: all;
+  -o-transition-duration: 0.5s;
+  -o-transition-timing-function: ease;
+  -o-transition-delay: 0;
+  -webkit-transition-property: all;
+  -webkit-transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease;
+  -webkit-transition-delay: 0;
+  -ms-transition-property: all;
+  -ms-transition-duration: 0.5s;
+  -ms-transition-timing-function: ease;
+  -ms-transition-delay: 0;
+}
+.sk-button.sk-bt-add {
+  font-size: 20px;
 }
 html {
   padding: 0;

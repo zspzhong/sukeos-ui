@@ -1,13 +1,13 @@
 <template>
-  <div class="paging-page">
-    <div class="page-items">
-      <div class="left-page" @click="leftPage()">&lt;</div>
-      <div class="page-list" :style="{'width': (countPage * 30) + 'px', 'max-width': (showSize * 30) + 'px'}">
+  <div class="sk-paging">
+    <div class="sk-page-items">
+      <div class="sk-page-left-page" @click="leftPage()">&lt;</div>
+      <div class="sk-page-page-list" :style="{'width': (countPage * 30) + 'px', 'max-width': (showSize * 30) + 'px'}">
         <div :style="{'width': (countPage * 30) + 'px', 'left': '-' + left + 'px'}">
           <div @click="changPage(item, size)" :class="{'active': item === page}" v-for="(item, key) in countPage" :key="key">{{item}}</div>
         </div>
       </div>
-      <div class="right-page" @click="rightPage()">&gt;</div>
+      <div class="sk-page-right-page" @click="rightPage()">&gt;</div>
     </div>
     <div>共{{countPage}}页</div>
     <div>{{size}}/页</div>

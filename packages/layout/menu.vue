@@ -35,7 +35,7 @@ export default {
       this.$router.push({ path: path })
     },
     logout () {
-
+      this.$emit('logout')
     }
   }
 }

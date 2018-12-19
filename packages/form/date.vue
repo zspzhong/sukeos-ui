@@ -1,20 +1,26 @@
 <template>
   <div class="sk-date" :class="{'active': typeState !== 'hidden'}">
     <div class="date-input" @click="opengDate()">
-      <span>{{year}}年</span>
-      <span>{{month}}月</span>
-      <span>{{day}}日</span>
+      <span v-show="value">{{year}}年</span>
+      <span v-show="value">{{month}}月</span>
+      <span v-show="value">{{day}}日</span>
       <span v-if="type === 'time'">{{hours > 9 ? hours : '0' + hours}}:{{minutes > 9 ? minutes : '0' + minutes}}</span>
+      <div class="sk-date-remove" @click.stop="remove()">X</div>
     </div>
     <div class="date-picker">
       <div :class="[typeState]">
         <div class="year-picker">
-<!--           <div class="picker-top">
-            <div class="i-left"><</div>
-            <div class="i-right">></div>
-          </div> -->
+          <div class="picker-top">
+            <!-- <div class="i-left"><</div> -->
+            <div>年份</div>
+            <!-- <div class="i-right">></div> -->
+          </div>
           <div class="year-items">
-            <div @click="clickYear(item + 2013)" :class="{'active': year === item + 2013}" v-for="(item, index) in 9" :key="index + 'year'">{{item + 2013 + '年'}}</div>
+            <div @click="clickYear(item + startYear)" :class="{'active': year === item + startYear}" v-for="(item, index) in 12" :key="index + 'year'">{{item + startYear}}</div>
+          </div>
+          <div class="year-chang">
+            <div class="i-left" @click="yearChangLeft()"><</div>
+            <div class="i-right" @click="yearChangRight()">></div>
           </div>
         </div>
         <div class="month-picker">
@@ -42,7 +48,7 @@
             <div class="top">五</div>
             <div class="top">六</div>
             <div v-for="(item, index) in lastDays" :key="index + 'lastDays'">{{item}}</div>
-            <div @click="clickDay(item.day)" :class="{'active': day === item}" v-for="(item, index) in days" :key="index + 'days'">{{item}}</div>
+            <div @click="clickDay(item)" :class="{'active': day === item}" v-for="(item, index) in days" :key="index + 'days'">{{item}}</div>
             <div v-for="(item, index) in nextDays" :key="index + 'nextDays'">{{item}}</div>
           </div>
         </div>
@@ -90,18 +96,21 @@ export default {
     },
     value: {
       type: Number,
-      default: new Date().getTime()
+      default: null
     },
     data: {
       type: Object,
       default: () => {
-        return { type: 'day' }
+        return {
+          type: 'day'
+        }
       }
     }
   },
   data () {
     return {
-      typeState: 'hidden'
+      typeState: 'hidden',
+      startYear: new Date().getFullYear() - 8
     }
   },
   computed: {
@@ -109,29 +118,37 @@ export default {
       return this.data.type
     },
     getTime () {
-      return new Date(this.value).getTime()
+      let value = this.value ? this.value : new Date().getTime()
+      return new Date(value).getTime()
     },
     year () {
-      return new Date(this.value).getFullYear()
+      let value = this.value ? this.value : new Date().getTime()
+      return new Date(value).getFullYear()
     },
     month () {
-      return new Date(this.value).getMonth() + 1
+      let value = this.value ? this.value : new Date().getTime()
+      return new Date(value).getMonth() + 1
     },
     day () {
-      return new Date(this.value).getDate()
+      let value = this.value ? this.value : new Date().getTime()
+      return new Date(value).getDate()
     },
     hours () {
-      return new Date(this.value).getHours()
+      let value = this.value ? this.value : new Date().getTime()
+      return new Date(value).getHours()
     },
     week () {
-      return new Date(this.value).getDay()
+      let value = this.value ? this.value : new Date().getTime()
+      return new Date(value).getDay()
     },
     minutes () {
-      return new Date(this.value).getMinutes()
+      let value = this.value ? this.value : new Date().getTime()
+      return new Date(value).getMinutes()
     },
     lastDays () {
-      const year = new Date(this.value).getFullYear()
-      const month = new Date(this.value).getMonth()
+      let value = this.value ? this.value : new Date().getTime()
+      const year = new Date(value).getFullYear()
+      const month = new Date(value).getMonth()
       const weekFirstDay = new Date(year, month, 1).getDay()
       const nowMonth = new Date(year, month, 1).getTime()
       const lastMonthDay = new Date(parseInt(nowMonth - 1)).getDate()
@@ -142,8 +159,9 @@ export default {
       return data
     },
     days () {
-      const year = new Date(this.value).getFullYear()
-      const month = new Date(this.value).getMonth()
+      let value = this.value ? this.value : new Date().getTime()
+      const year = new Date(value).getFullYear()
+      const month = new Date(value).getMonth()
       const nextMonth = new Date(year, month + 1, 1).getTime()
       const nowMonthDay = new Date(parseInt(nextMonth - 1)).getDate()
       let data = []
@@ -153,8 +171,9 @@ export default {
       return data
     },
     nextDays () {
-      const year = new Date(this.value).getFullYear()
-      const month = new Date(this.value).getMonth()
+      let value = this.value ? this.value : new Date().getTime()
+      const year = new Date(value).getFullYear()
+      const month = new Date(value).getMonth()
       const nextMonth = new Date(year, month + 1, 1).getTime()
       const nowMonthDay = new Date(parseInt(nextMonth - 1)).getDate()
       const weekLastDay = new Date(year, month, nowMonthDay).getDay()
@@ -170,7 +189,17 @@ export default {
       if (this.typeState === 'hidden') this.typeState = 'day'
       else this.typeState = 'hidden'
     },
+    yearChangLeft () {
+      this.startYear = this.startYear - 12
+    },
+    yearChangRight () {
+      this.startYear = this.startYear + 12
+    },
     changeTypeState (type) {
+      if (type === 'year') {
+        let value = this.value ? this.value : new Date().getTime()
+        this.startYear = new Date(value).getFullYear() - 8
+      }
       this.typeState = type
     },
     clickYear (year) {
@@ -198,6 +227,9 @@ export default {
       const date = new Date(this.year, this.month - 1, this.day, this.hours, minutes).getTime()
       this.input(date)
       this.typeState = 'hidden'
+    },
+    remove () {
+      this.$emit('input', null, this.keyname)
     },
     input (value) {
       this.$emit('input', value, this.keyname)
