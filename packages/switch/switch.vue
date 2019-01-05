@@ -30,6 +30,9 @@ export default {
           active = key
         }
       }
+      if (!active) {
+        this.$emit('input', this.data.false)
+      }
       return active
     }
   },
@@ -39,8 +42,15 @@ export default {
         false: 'true',
         true: 'false'
       }
-      const value = this.data[map[status]]
+      status = map[status]
+      const value = this.data[status]
       this.$emit('input', value)
+      this.$emit('change')
+      if (status === 'true') {
+        this.$emit('true')
+      } else if (status === 'false') {
+        this.$emit('false')
+      }
     }
   }
 }
