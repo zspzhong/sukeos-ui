@@ -835,6 +835,9 @@
 .sk-layout .sk-layout-menu .sk-layout-menu-body > div i.approval {
   background-image: url('../src/icon/i-approval.svg');
 }
+.sk-layout .sk-layout-menu .sk-layout-menu-body > div i.announcement {
+  background-image: url('../src/icon/i-announcement.svg');
+}
 .sk-layout .sk-layout-content {
   padding-left: 50px;
   width: 100%;
