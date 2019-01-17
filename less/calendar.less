@@ -1,0 +1,64 @@
+@import "./color";
+@import "./tool";
+
+.sk-calendar-page {
+  font-size: 0;
+  text-align: left;
+  width: 900px;
+  position: relative;
+  margin: auto;
+
+  &>div {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 14px;
+    text-align: center;
+    width: 14%;
+    height: 80px;
+
+    &.calendar-date {
+      display: block;
+      width: 100%;
+      line-height: 30px;
+      height: 30px;
+      font-size: 14px;
+      text-align: center;
+      opacity: .5;
+    }
+
+    &.light {
+      opacity: .5;
+    }
+    &.top {
+      opacity: .5;
+      height: 30px;
+      line-height: 30px;
+      margin-bottom: 10px;
+      border-bottom: 1px dashed rgba(44, 62, 80, 0.18);
+    }
+    .day {
+      line-height: 30px;
+    }
+    .project {
+      font-size: 12px;
+      text-align: left;
+      &>div {
+        text-align: center;
+        cursor: pointer;
+        // background-color: rgba(44, 62, 80, 0.18);
+        margin: 3px 15px;
+        padding: 0 10px;
+        border-radius: 12px;
+
+        &.error {
+          color: red;
+        }
+      }
+    }
+    &.active {
+      .day {
+        color: red;
+      }
+    }
+  }
+}
