@@ -11,17 +11,18 @@
     <div class="top">四</div>
     <div class="top">五</div>
     <div class="top">六</div>
-    <div class="light" v-for="(item, key) in lastDays" :key="key">
+    <div class="light" v-for="(item, key) in lastDays" :key="'lastDays' + key">
       <div class="day">{{item.day}}</div>
     </div>
-    <div v-for="(item, key) in days" :key="key">
+    <div v-for="(item, key) in days" :key="'days' + key">
       <div class="day">{{item.day}}</div>
-      <div class="project" v-if="attend[item.day]">
-        <div :class="{'error': !attend[item.day].startState}">{{attend[item.day] ? attend[item.day].startTime : '-'}}</div>
-        <div :class="{'error': !attend[item.day].endState}">{{attend[item.day] ? attend[item.day].endTime : '-'}}</div>
+      <div class="project" v-if="data[item.day]">
+        <div v-for="(row, index) in data[item.day]"
+        :key="'data' + index"
+        :class="row.type">{{row.value}}</div>
       </div>
     </div>
-    <div class="light" v-for="(item, key) in nextDays" :key="key">
+    <div class="light" v-for="(item, key) in nextDays" :key="'nextDays' + key">
       <div class="day">{{item.day}}</div>
     </div>
   </div>
@@ -30,13 +31,9 @@
 <script>
 export default {
   props: {
-    month: {
+    value: {
       type: Number,
-      default: new Date().getMonth() + 1
-    },
-    year: {
-      type: Number,
-      default: new Date().getFullYear()
+      default: new Date().getTime()
     },
     day: {
       type: Number,
@@ -44,65 +41,66 @@ export default {
     },
     width: {
       type: String,
-      default: '700px'
+      default: '800px'
     },
-    attend: {
+    data: {
       type: Object,
       default: () => {
         return {}
       }
     }
   },
-  data () {
-    return {
-      weekFirstDay: 0,
-      weekLastDay: 0,
-      nowMonthDay: 0,
-      days: {},
-      nextDays: {},
-      lastDays: {}
-    }
-  },
   computed: {
-    date () {
-      const time = new Date(this.year, this.month, 1).getTime()
-      return time
-    }
-  },
-  created () {
-    this.initCalendar()
-  },
-  methods: {
-    initCalendar () {
-      const year = new Date(this.date).getFullYear()
-      const month = new Date(this.date).getMonth()
-      const nextMonth = new Date(year, month + 1, 1).getTime()
-      this.nowMonthDay = new Date(parseInt(nextMonth - 1)).getDate()
+    year () {
+      return new Date(this.value).getFullYear()
+    },
+    month () {
+      return new Date(this.value).getMonth() + 1
+    },
+    weekFirstDay () {
+      return new Date(this.year, this.month - 1, 1).getDay() || 0
+    },
+    nowMonthDay () {
+      const nextMonth = new Date(this.year, this.month, 1).getTime()
+      return new Date(parseInt(nextMonth - 1)).getDate() || 0
+    },
+    weekLastDay () {
+      return new Date(this.year, this.month - 1, this.nowMonthDay).getDay() || 0
+    },
+    lastMonthDay () {
+      const nowMonth = new Date(this.year, this.month - 1, 1).getTime()
+      return new Date(parseInt(nowMonth - 1)).getDate() || 0
+    },
+    lastDays () {
       // 月第一天星期几
-      this.weekFirstDay = new Date(year, month, 1).getDay()
-      // 月最后一天星期几
-      this.weekLastDay = new Date(year, month, this.nowMonthDay).getDay()
-      // 上个月最后一天
-      const nowMonth = new Date(year, month, 1).getTime()
-      const lastMonthDay = new Date(parseInt(nowMonth - 1)).getDate()
-      // 生成数组
+      const lastDays = {}
       for (let i = this.weekFirstDay; i > 0; i--) {
-        this.lastDays[lastMonthDay - i + 1] = {
-          day: lastMonthDay - i + 1
+        lastDays[this.lastMonthDay - i + 1] = {
+          day: this.lastMonthDay - i + 1
         }
       }
+      return lastDays
+    },
+    days () {
+      const days = {}
       for (let i = 1; i < (this.nowMonthDay + 1); i++) {
-        this.days[i] = {
+        days[i] = {
           day: i,
           project: {}
         }
       }
+      return days
+    },
+    nextDays () {
+      const nextDays = {}
       for (let i = 1; i < (7 - this.weekLastDay); i++) {
-        this.nextDays[i] = {
+        nextDays[i] = {
           day: i
         }
       }
+      return nextDays
     }
-  }
+  },
+  methods: {}
 }
 </script>

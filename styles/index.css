@@ -1193,6 +1193,53 @@
   -webkit-transform: translate(21px, 1px);
   -o-transform: translate(21px, 1px);
 }
+.sk-calendar-page {
+  font-size: 0;
+  text-align: left;
+  position: relative;
+  margin: auto;
+}
+.sk-calendar-page > div {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 14px;
+  text-align: center;
+  width: 14%;
+  height: 100px;
+}
+.sk-calendar-page > div.calendar-date {
+  display: block;
+  width: 100%;
+  line-height: 30px;
+  height: 30px;
+  font-size: 14px;
+  text-align: center;
+  opacity: 0.5;
+}
+.sk-calendar-page > div.light {
+  opacity: 0.5;
+}
+.sk-calendar-page > div.top {
+  opacity: 0.5;
+  height: 30px;
+  line-height: 30px;
+  margin-bottom: 10px;
+  border-bottom: 1px dashed #eaedf1;
+}
+.sk-calendar-page > div .day {
+  line-height: 30px;
+  font-weight: bold;
+}
+.sk-calendar-page > div .project {
+  font-size: 14px;
+  text-align: center;
+}
+.sk-calendar-page > div .project > div {
+  cursor: pointer;
+  margin: 3px 10px;
+  padding: 0 10px;
+  border-radius: 12px;
+}
 html {
   padding: 0;
   margin: 0;
