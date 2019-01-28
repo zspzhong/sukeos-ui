@@ -102,6 +102,60 @@
 .sk-modal-page .sk-modal-close:hover {
   background-color: rgba(44, 62, 80, 0.2);
 }
+.sk-input-buttom.add-buttom {
+  position: relative;
+}
+.sk-input-buttom.add-buttom > div {
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: center;
+  width: 30px;
+  line-height: 30px;
+  cursor: pointer;
+  border-radius: 0 15px 15px 0;
+  border-left: 1px solid #e8eaed;
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+  transition-delay: 0;
+  -moz-transition-property: all;
+  -moz-transition-duration: 0.5s;
+  -moz-transition-timing-function: ease;
+  -moz-transition-delay: 0;
+  -o-transition-property: all;
+  -o-transition-duration: 0.5s;
+  -o-transition-timing-function: ease;
+  -o-transition-delay: 0;
+  -webkit-transition-property: all;
+  -webkit-transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease;
+  -webkit-transition-delay: 0;
+  -ms-transition-property: all;
+  -ms-transition-duration: 0.5s;
+  -ms-transition-timing-function: ease;
+  -ms-transition-delay: 0;
+}
+.sk-input-buttom.add-buttom > div:hover {
+  background-color: #e8eaed;
+}
+.sk-input-buttom.sk-input-search {
+  position: relative;
+}
+.sk-input-buttom.sk-input-search > i {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-image: url(../src/icon/i-search.svg);
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  padding: 0 10px;
+  background-size: 26px 26px;
+  background-repeat: no-repeat;
+  background-position: 12px -2px;
+  cursor: pointer;
+}
 .sk-prompt {
   width: 100%;
   height: 100%;
