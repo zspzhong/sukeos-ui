@@ -3,7 +3,7 @@
     <div class="date-input" @click="opengDate()">
       <span v-show="value">{{year}}年</span>
       <span v-show="value">{{month}}月</span>
-      <span v-show="value">{{day}}日</span>
+      <span v-if="type === 'day' || type === 'time'" v-show="value">{{day}}日</span>
       <span v-if="type === 'time'">{{hours > 9 ? hours : '0' + hours}}:{{minutes > 9 ? minutes : '0' + minutes}}</span>
       <div class="sk-date-remove" @click.stop="remove()">X</div>
     </div>
@@ -186,7 +186,7 @@ export default {
   },
   methods: {
     opengDate () {
-      if (this.typeState === 'hidden') this.typeState = 'day'
+      if (this.typeState === 'hidden') this.typeState = this.type
       else this.typeState = 'hidden'
     },
     yearChangLeft () {
@@ -210,12 +210,13 @@ export default {
     clickMonth (month) {
       const date = new Date(this.year, month - 1, this.day).getTime()
       this.input(date)
-      this.typeState = 'day'
+      if (this.type === 'month') this.typeState = 'hidden'
+      else this.typeState = 'day'
     },
     clickDay (day) {
       const date = new Date(this.year, this.month - 1, day).getTime()
       this.input(date)
-      if (this.type === 'time') this.typeState = 'hours'
+      if (this.type === 'day') this.typeState = 'hidden'
       else this.typeState = 'hidden'
     },
     clickHours (hours) {
