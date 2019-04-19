@@ -1,0 +1,61 @@
+@import "./color";
+@import "./tool";
+
+.sk-list-add {
+  position: relative;
+  width: 300px;
+  border-radius: 15px;
+  .input-search {
+    position: relative;
+
+    &>i {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-image: url(../src/icon/i-search.svg);
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      padding: 0 10px;
+      background-size: 26px 26px;
+      background-repeat: no-repeat;
+      background-position: 12px -2px;
+      cursor: pointer;
+    }
+  }
+  .items-search {
+    position: absolute;
+    top: 100%;
+    margin-top: 10px;
+    left: 0;
+    width: 100%;
+    line-height: 30px;
+    max-height: 200px;
+    overflow: auto;
+    border-radius: 15px;
+    padding: 0 10px;
+    .border-box();
+    border: 1px solid #eaedf1;
+    .transition(all, 0.5s, ease);
+
+    &.hidden {
+      height: 0;
+      border: 0 solid #eaedf1;
+      margin: 0;
+    }
+    &>div {
+      border-bottom: 1px solid #f2f2f2;
+      padding: 0 10px;
+      cursor: pointer;
+      .transition(all, 0.5s, ease);
+
+      &:last-child {
+        border-bottom: 0 solid #f2f2f2;
+      }
+
+      &:hover {
+        background-color: #F1F3F4;
+      }
+    }
+  }
+}

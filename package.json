@@ -1,10 +1,12 @@
 {
   "name": "sukeos-ui",
-  "version": "1.0.61",
+  "version": "1.0.64",
   "description": "sukeos ui",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server --open --hot",
+    "build": "webpack --progress --hide-modules"
   },
   "repository": {
     "type": "git",
@@ -21,11 +23,25 @@
   },
   "homepage": "https://github.com/zspzhong/sukeos-ui#readme",
   "devDependencies": {
-    "gulp": "^3.9.1",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "browser-sync": "^2.26.3",
+    "css-loader": "^2.1.1",
+    "file-loader": "^3.0.1",
+    "gulp": "^3.9.0",
     "gulp-less": "^4.0.1",
-    "gulp-plumber": "^1.2.0"
+    "gulp-plumber": "^1.2.0",
+    "less-loader": "^4.1.0",
+    "style-loader": "^0.23.1",
+    "vue-loader": "^15.7.0",
+    "vue-template-compiler": "^2.6.10",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.3.1"
   },
   "dependencies": {
-    "axios": "^0.18.0"
+    "axios": "^0.18.0",
+    "vue": "^2.6.10",
+    "vue-router": "^3.0.5"
   }
 }

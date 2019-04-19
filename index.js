@@ -11,6 +11,7 @@ import SkButtonAdd from './packages/button/button-add'
 import SkButton from './packages/button/button'
 import SkSwitch from './packages/switch/switch'
 import SkCalendar from './packages/calendar/calendar'
+import SkListAdd from './packages/list/add'
 
 
 const SukeosUi = {
@@ -27,6 +28,7 @@ const SukeosUi = {
     Vue.component('SkSwitch', SkSwitch)
     Vue.component('SkCalendar', SkCalendar)
     Vue.component('SkInputSearch', SkInputSearch)
+    Vue.component('SkListAdd', SkListAdd)
     Vue.prototype.$skprompt = SkPrompt
   }
 }
