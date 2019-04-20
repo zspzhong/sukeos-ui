@@ -1,7 +1,7 @@
 <template>
   <div class="sk-list sk-list-add">
     <div class="input-search">
-      <input type="text" :value="showValue" @input="input">
+      <input type="text" :value="showValue" :placeholder="placeholder" @input="input">
       <i></i>
     </div>
     <div class="items-search" :class="{'hidden': searchItems.length === 0}">
@@ -16,6 +16,10 @@
 export default {
   props: {
     value: {
+      type: String,
+      default: ''
+    },
+    placeholder: {
       type: String,
       default: ''
     },

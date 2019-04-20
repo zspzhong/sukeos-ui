@@ -1294,37 +1294,101 @@
   padding: 0 10px;
   border-radius: 12px;
 }
-.sk-list-search {
-  height: 200px;
-  overflow: auto;
+.sk-list-add {
   position: relative;
-  padding-top: 30px;
-  width: 250px;
+  width: 300px;
+  border-radius: 15px;
 }
-.sk-list-search .input-search {
+.sk-list-add .input-search {
+  position: relative;
+}
+.sk-list-add .input-search > i {
   position: absolute;
   top: 0;
+  right: 0;
+  background-image: url(../src/icon/i-search.svg);
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  padding: 0 10px;
+  background-size: 26px 26px;
+  background-repeat: no-repeat;
+  background-position: 12px -2px;
+  cursor: pointer;
+}
+.sk-list-add .items-search {
+  position: absolute;
+  top: 100%;
+  margin-top: 5px;
   left: 0;
-  padding: 0 20px;
   width: 100%;
+  line-height: 30px;
+  max-height: 200px;
+  overflow: auto;
+  border-radius: 15px;
+  padding: 0 10px;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
+  border: 1px solid #eaedf1;
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+  transition-delay: 0;
+  -moz-transition-property: all;
+  -moz-transition-duration: 0.5s;
+  -moz-transition-timing-function: ease;
+  -moz-transition-delay: 0;
+  -o-transition-property: all;
+  -o-transition-duration: 0.5s;
+  -o-transition-timing-function: ease;
+  -o-transition-delay: 0;
+  -webkit-transition-property: all;
+  -webkit-transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease;
+  -webkit-transition-delay: 0;
+  -ms-transition-property: all;
+  -ms-transition-duration: 0.5s;
+  -ms-transition-timing-function: ease;
+  -ms-transition-delay: 0;
+  background-color: #ffffff;
+  font-size: 14px;
 }
-.sk-list-search .list-search {
-  padding: 0 20px;
+.sk-list-add .items-search.hidden {
+  height: 0;
+  border: 0 solid #eaedf1;
+  margin: 0;
 }
-.sk-list-search .list-search .items-search {
-  line-height: 30px;
-  padding-top: 10px;
-}
-.sk-list-search .list-search .items-search > div {
+.sk-list-add .items-search > div {
   border-bottom: 1px solid #f2f2f2;
-  padding: 0 20px;
+  padding: 0 10px;
   cursor: pointer;
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+  transition-delay: 0;
+  -moz-transition-property: all;
+  -moz-transition-duration: 0.5s;
+  -moz-transition-timing-function: ease;
+  -moz-transition-delay: 0;
+  -o-transition-property: all;
+  -o-transition-duration: 0.5s;
+  -o-transition-timing-function: ease;
+  -o-transition-delay: 0;
+  -webkit-transition-property: all;
+  -webkit-transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease;
+  -webkit-transition-delay: 0;
+  -ms-transition-property: all;
+  -ms-transition-duration: 0.5s;
+  -ms-transition-timing-function: ease;
+  -ms-transition-delay: 0;
 }
-.sk-list-search .list-search .items-search > div:hover {
+.sk-list-add .items-search > div:last-child {
+  border-bottom: 0 solid #f2f2f2;
+}
+.sk-list-add .items-search > div:hover {
   background-color: #F1F3F4;
 }
 html {
