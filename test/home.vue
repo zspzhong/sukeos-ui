@@ -9,6 +9,9 @@
       <div style="margin: 30px;">
         <sk-list-add @select="select" :data="data" v-model="value" :keywords="keywords"></sk-list-add>
       </div>
+      <div>
+        <sk-form :config="config" v-model="editData"></sk-form>
+      </div>
   </div>
 </template>
 
@@ -109,7 +112,21 @@ export default{
         }
       ],
       value: '123',
-      keywords: ''
+      keywords: '',
+      editData: {
+        endTime: ''
+      },
+      config: [
+        {
+          is: 'date',
+          label: '结束时间',
+          placeholder: '结束时间',
+          key: 'endTime',
+          data: {
+            type: 'minutes'
+          }
+        }
+      ]
     }
   },
   methods: {

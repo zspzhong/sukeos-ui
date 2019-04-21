@@ -17,6 +17,18 @@ export default {
     value: {
       type: String,
       default: ''
+    },
+    data: {
+      type: Object,
+      default: () => {
+        return {
+          url: '',
+          headers: {},
+          response: (res) => {
+            return res
+          }
+        }
+      }
     }
   },
   methods: {
@@ -24,11 +36,14 @@ export default {
       let file = e.target.files[0]
       let param = new FormData()
       let config = {
-        headers: {'Content-Type': 'multipart/form-data'}
+        headers: {
+          'Content-Type': 'multipart/form-data',
+          ...this.data.headers
+        }
       }
       param.append('file', file, file.name)
-      axios.post('/ngxy/api/admin/upload/image', param, config).then(response => {
-        this.$emit('input', response.data.result.url, this.keyname)
+      axios.post(this.data.url, param, config).then(response => {
+        this.$emit('input', this.data.response(response.data), this.keyname)
       })
     }
   }
