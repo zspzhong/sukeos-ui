@@ -664,9 +664,47 @@
   overflow: hidden;
   height: 30px;
 }
+.sk-form .sk-form-items .sk-form-row .sk-select {
+  background-color: #F1F3F4;
+  border-radius: 15px;
+  height: 30px;
+  cursor: pointer;
+  position: relative;
+}
+.sk-form .sk-form-items .sk-form-row .sk-select::before {
+  content: '';
+  width: 30px;
+  height: 30px;
+  top: 0;
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  padding: 0 10px;
+  background-position: 14px 4px;
+  background-size: 22px 22px;
+  opacity: 0.8;
+  background-repeat: no-repeat;
+  background-image: url(../src/icon/i-drop-down.svg);
+}
+.sk-form .sk-form-items .sk-form-row .sk-select select {
+  width: 100%;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  height: 30px;
+  line-height: 30px;
+  padding-left: 20px;
+  border-radius: 15px;
+  border: 0 solid #F1F3F4;
+  background-color: #F1F3F4;
+}
+.sk-form .sk-form-items .sk-form-row .sk-select select:focus {
+  border: 0 solid #F1F3F4;
+  outline: none;
+}
 .sk-form .sk-form-items .sk-form-row .sk-radio {
   line-height: 30px;
-  height: 30px;
+  min-height: 30px;
   padding-left: 10px;
 }
 .sk-form .sk-form-items .sk-form-row .sk-radio > div {

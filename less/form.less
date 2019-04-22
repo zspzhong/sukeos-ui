@@ -290,9 +290,48 @@
         height: 30px;
       }
 
+      .sk-select {
+        background-color: @color-bk;
+        border-radius: 15px;
+        height: 30px;
+        cursor: pointer;
+        position: relative;
+        &::before {
+          content: '';
+          width: 30px;
+          height: 30px;
+          top: 0;
+          display: inline-block;
+          position: absolute;
+          right: 0;
+          padding: 0 10px;
+          background-position: 14px 4px;
+          background-size: 22px 22px;
+          opacity: .8;
+          background-repeat: no-repeat;
+          background-image: url(../src/icon/i-drop-down.svg);
+        }
+        select {
+          width: 100%;
+          appearance:none;  
+          -moz-appearance:none;  
+          -webkit-appearance:none;
+          height: 30px;
+          line-height: 30px;
+          padding-left: 20px;
+          border-radius: 15px;
+          border: 0 solid @color-bk;
+          background-color: @color-bk;
+          &:focus {
+            border: 0 solid @color-bk;
+            outline: none;
+          }
+        }
+      }
+
       .sk-radio {
         line-height: 30px;
-        height: 30px;
+        min-height: 30px;
         padding-left: 10px;
         &>div {
           display: inline-block;

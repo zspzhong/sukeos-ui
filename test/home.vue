@@ -114,16 +114,47 @@ export default{
       value: '123',
       keywords: '',
       editData: {
-        endTime: ''
+        endTime: '',
+        one: ''
       },
       config: [
         {
-          is: 'date',
+          is: 'input',
           label: '结束时间',
           placeholder: '结束时间',
           key: 'endTime',
           data: {
             type: 'minutes'
+          }
+        },
+        {
+          is: 'select',
+          label: 'one',
+          placeholder: 'one',
+          key: 'one',
+          data: {
+            option: [
+              {
+                value: '2',
+                name: '321321'
+              },
+              {
+                value: '1',
+                name: '321321'
+              },
+              {
+                value: '5',
+                name: '14321'
+              },
+              {
+                value: '7',
+                name: '3'
+              },
+              {
+                value: '9',
+                name: '2'
+              }
+            ]
           }
         }
       ]

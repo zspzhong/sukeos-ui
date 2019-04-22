@@ -27,13 +27,15 @@ import SkRadio from './radio'
 import SkUpload from './upload'
 import SkDate from './date'
 import SkTextarea from './textarea'
+import SkSelect from './select'
 export default {
   components: {
     SkInput,
     SkRadio,
     SkUpload,
     SkDate,
-    SkTextarea
+    SkTextarea,
+    SkSelect
   },
   props: {
     config: {
