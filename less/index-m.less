@@ -1,0 +1,128 @@
+
+@media screen and (min-width: 375px){
+    html {
+      font-size: 14.0625px;   
+    }
+  }
+  @media screen and (min-width: 360px){
+    html {
+      font-size: 13.5px;
+    }
+  }
+  @media screen and (min-width: 320px){
+    html {
+      font-size: 12px;
+    }
+  }
+  
+  @media screen and (max-width: 375px) {
+    .sk-layout {
+      height: auto;
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      padding-top: 4rem;
+      .sk-layout-menu {
+        width: 100%;
+        height: 4rem;
+        top: 0;
+        left: 0;
+        position: fixed;
+        z-index: 1000;
+  
+        .sk-layout-menu-body {
+          width: 100%;
+          padding-top: 0;
+          text-align: left;
+  
+          &:hover {
+            width: 100%;
+          }
+  
+          &>div {
+            width: 4rem;
+            height: 4rem;
+            display: inline-block;
+            vertical-align: top;
+            padding: .4rem 0;
+            text-align: center;
+  
+            i {
+              display: block;
+              position: relative;
+              top: 0;
+              left: 0;
+              width: 1.6rem;
+              height: 1.6rem;
+              margin: auto;
+            }
+            &>div {
+              display: block;
+              font-size: .6rem;
+              line-height: 1.6rem;
+            }
+          }
+        }
+      }
+      .sk-layout-content {
+        padding-left: 0;
+        height: auto;
+        position: relative;
+  
+        &>div {
+          padding: 3rem 0 0 0;
+  
+          &.sk-layout-hidden-sub-menu {
+            padding: 0;
+  
+            .sk-layout-sub-menu {
+              display: none;
+            }
+          }
+  
+          .sk-layout-sub-menu {
+            position: fixed;
+            top: 4rem;
+            left: 0;
+            width: 100%;
+            padding: .5rem 0;
+            height: auto;
+            margin-bottom: .5rem;
+            &>div {
+              font-size: 1rem;
+              line-height: 2rem;
+              display: inline-block;
+              padding: 0 1rem 0 0;
+              &:hover {
+                background-color: #fff0;
+              }
+            }
+          }
+        }
+      }
+    }
+    .sk-table {
+      width: 100%;
+      overflow: auto;
+      .sk-table-top,.sk-table-row {
+        min-width: 60rem;
+      }
+    }
+    .sk-paging {
+      text-align: center;
+  
+      .sk-page-items {
+        margin-right: 0;
+      }
+    }
+    .sk-modal-page {
+      &>div {
+        width: 100% !important;
+      }
+    }
+    .sk-prompt {
+      &>div {
+        width: 100%;
+      }
+    }
+  }
