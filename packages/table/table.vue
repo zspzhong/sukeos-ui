@@ -6,29 +6,33 @@
       :style="{'width': item.width}"
       v-if="item.type !== 'row'"
       >
+        <span class="select" v-if="item.type === 'select'"></span>
         <span v-if="item.type === 'index'">#</span>
-        <span v-if="item.type !== 'tof' && item.type !== 'index'">{{item.name}}</span>
+        <span v-if="item.type !== 'tof' && item.type !== 'index' && item.type !== 'select'">{{item.name}}</span>
       </div>
     </div>
-    <div class="sk-table-row" v-for="(row, index) in showData"
+    <div class="sk-table-row"
+    v-for="(row, index) in showData"
     :key="index"
+    :class="{'active': row.active }"
     @click="openInfo(index)">
       <div v-for="(item, key) in top"
       :key="key"
       :style="{'width': item.width}"
       >
-        <div v-if="item.type === 'index'">{{size * (page - 1) + index + 1}}</div>
+        <div class="select" v-if="item.type === 'select'" @click="select(row)"></div>
+        <div v-if="item.type === 'index'" @click="click(row)">{{size * (page - 1) + index + 1}}</div>
 
-        <div class="sk-table-body-nickname" v-if="item.type === 'nickname'">
+        <div class="sk-table-body-nickname" v-if="item.type === 'nickname'" @click="click(row)">
           <img :src="row[item.img]">
           <span>{{item.key ? row[item.key] : item.value(row)}}</span>
         </div>
 
-        <div class="sk-table-body-qrcode" v-if="item.type === 'qrcode'">
+        <div class="sk-table-body-qrcode" v-if="item.type === 'qrcode'" @click="click(row)">
           <i></i>
         </div>
 
-        <div v-if="!item.type">
+        <div v-if="!item.type" @click="click(row)">
           <span>{{item.key ? row[item.key] : item.value(row)}}</span>
         </div>
       </div>
@@ -112,6 +116,9 @@ export default {
     emit (type, row, disabled) {
       if (disabled) return
       this.$emit(type, row)
+    },
+    click (row) {
+      this.$emit('click', row)
     }
   }
 }

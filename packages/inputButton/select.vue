@@ -1,6 +1,6 @@
 <template>
-  <div class="sk-input-buttom sk-input-select">
-    <select :name="name" :value="selectValue" @input="select">
+  <div class="sk-input-buttom sk-input-select" :style="{'padding-left': width}">
+    <select :style="{'width': width}" :name="name" :value="selectValue" @input="changeSelect">
       <option :value="item.value" v-for="(item, key) in data.option" :key="key">{{item.name}}</option>   
     </select>
     <input type="text" :value="showValue" :placeholder="placeholder" @input="input">
@@ -11,6 +11,14 @@
 <script>
 export default {
   props: {
+    name: {
+      type: String,
+      default: ''
+    },
+    width: {
+      type: String,
+      default: '100px'
+    },
     placeholder: {
       type: String,
       default: ''
@@ -43,7 +51,7 @@ export default {
       const value = event.target.value
       this.$emit('input', value)
     },
-    select (event) {
+    changeSelect (event) {
       const value = event.target.value
       this.$emit('select', value, this.keyname)
     },

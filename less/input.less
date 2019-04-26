@@ -54,13 +54,16 @@
       height: 30px;
       line-height: 30px;
       padding-left: 20px;
-      border-radius: 15px;
+      border-radius: 15px 0 0 15px;
       border: 0 solid @color-bk;
-      background-color: @color-bk;
+      background-color: #d5dae2;
       &:focus {
         border: 0 solid @color-bk;
         outline: none;
       }
+    }
+    &>input {
+      border-radius: 0 15px 15px 0;
     }
 
     &>i {

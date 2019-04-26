@@ -156,6 +156,45 @@
   background-position: 12px -2px;
   cursor: pointer;
 }
+.sk-input-buttom.sk-input-select {
+  position: relative;
+}
+.sk-input-buttom.sk-input-select > select {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  height: 30px;
+  line-height: 30px;
+  padding-left: 20px;
+  border-radius: 15px 0 0 15px;
+  border: 0 solid #F1F3F4;
+  background-color: #d5dae2;
+}
+.sk-input-buttom.sk-input-select > select:focus {
+  border: 0 solid #F1F3F4;
+  outline: none;
+}
+.sk-input-buttom.sk-input-select > input {
+  border-radius: 0 15px 15px 0;
+}
+.sk-input-buttom.sk-input-select > i {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-image: url(../src/icon/i-search.svg);
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  padding: 0 10px;
+  background-size: 26px 26px;
+  background-repeat: no-repeat;
+  background-position: 12px -2px;
+  cursor: pointer;
+}
 .sk-prompt {
   width: 100%;
   height: 100%;
@@ -1132,6 +1171,9 @@
   height: 30px;
 }
 .sk-table .sk-table-row:hover {
+  background-color: #F1F3F4;
+}
+.sk-table .sk-table-row.active {
   background-color: #F1F3F4;
 }
 .sk-table .sk-table-row > div {

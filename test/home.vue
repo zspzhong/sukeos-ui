@@ -1,14 +1,6 @@
 <template>
   <div>
-      <div style="margin: 30px;">
-        <sk-list-add @select="select" :data="data" v-model="value" :keywords="keywords"></sk-list-add>
-      </div>
-      <div>
-        <sk-form :config="config" v-model="editData"></sk-form>
-      </div>
-      <div>
-        <sk-input-select :select="select" @select="changSelect" :data="data" v-model="keywords"></sk-input-select>
-      </div>
+    <sk-table :top="top" v-model="items" @click="one"></sk-table>
   </div>
 </template>
 
@@ -16,32 +8,32 @@
 export default{
   data () {
     return {
-      data: {
-        option: [
-          {
-            name: '123',
-            value: '321'
-          },
-          {
-            name: '1',
-            value: '13'
-          },
-          {
-            name: '2',
-            value: '244'
-          }
-        ]
-      },
-      keywords: '',
-      select: ''
+      top: [
+        {
+          type: 'index',
+          width: '40px'
+        },
+        {
+          name: '用户',
+          width: '100px',
+          key: 'name'
+        }
+      ],
+      items: [
+        {
+          name: '123',
+          active: true
+        },
+        {
+          name: '123',
+          active: false
+        }
+      ]
     }
   },
   methods: {
-    // select (value, name) {
-    //   console.log(value, name)
-    // },
-    changSelect (value) {
-      console.log(value)
+    one (row) {
+      console.log(row)
     }
   }
 }
