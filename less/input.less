@@ -40,4 +40,42 @@
       cursor: pointer;
     }
   }
+  &.sk-input-select {
+    position: relative;
+
+    &>select {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100px;
+      appearance:none;  
+      -moz-appearance:none;  
+      -webkit-appearance:none;
+      height: 30px;
+      line-height: 30px;
+      padding-left: 20px;
+      border-radius: 15px;
+      border: 0 solid @color-bk;
+      background-color: @color-bk;
+      &:focus {
+        border: 0 solid @color-bk;
+        outline: none;
+      }
+    }
+
+    &>i {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-image: url(../src/icon/i-search.svg);
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      padding: 0 10px;
+      background-size: 26px 26px;
+      background-repeat: no-repeat;
+      background-position: 12px -2px;
+      cursor: pointer;
+    }
+  }
 }

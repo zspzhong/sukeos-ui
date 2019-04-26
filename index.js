@@ -1,6 +1,7 @@
 import SkModal from './packages/modal/modal'
 import AddInput from './packages/inputButton/addButton'
 import SkInputSearch from './packages/inputButton/search'
+import SkInputSelect from './packages/inputButton/select'
 import SkPrompt from './packages/prompt/prompt.js'
 import Paging from './packages/paging/paging'
 import SkForm from './packages/form/form'
@@ -28,6 +29,7 @@ const SukeosUi = {
     Vue.component('SkSwitch', SkSwitch)
     Vue.component('SkCalendar', SkCalendar)
     Vue.component('SkInputSearch', SkInputSearch)
+    Vue.component('SkInputSelect', SkInputSelect)
     Vue.component('SkListAdd', SkListAdd)
     Vue.prototype.$skprompt = SkPrompt
   }
