@@ -2,6 +2,7 @@
   <div>
     <sk-table :top="top" v-model="items" @click="one"></sk-table>
     <SkBtScreening :config="config" v-model="data"></SkBtScreening>
+    <sk-form :config="fConfig" v-model="fData"></sk-form>
   </div>
 </template>
 
@@ -80,7 +81,18 @@ export default{
           name: '123',
           active: false
         }
-      ]
+      ],
+      fConfig: [
+        {
+          is: 'tags',
+          label: 'tags',
+          key: 'tags',
+          placeholder: '输入需要添加的标签'
+        }
+      ],
+      fData: {
+        tags: ['标签一','标签二']
+      }
     }
   },
   methods: {

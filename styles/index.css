@@ -407,6 +407,115 @@
   -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
 }
+.sk-form .sk-form-items .sk-form-row .sk-tags .sk-tag-input {
+  display: inline-block;
+  vertical-align: top;
+  width: 180px;
+  height: 24px;
+  line-height: 24px;
+  margin: 3px 0;
+  position: relative;
+}
+.sk-form .sk-form-items .sk-form-row .sk-tags .sk-tag-input input {
+  height: 24px;
+  line-height: 24px;
+  font-size: 12px;
+  padding: 5px 40px 5px 15px;
+}
+.sk-form .sk-form-items .sk-form-row .sk-tags .sk-tag-input .sk-tag-input-bt-add {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #e8eaed;
+  opacity: 0.6;
+  font-size: 14px;
+  width: 30px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  border-radius: 0 15px 15px 0;
+  cursor: pointer;
+}
+.sk-form .sk-form-items .sk-form-row .sk-tags .sk-tag-item {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 12px;
+  line-height: 24px;
+  height: 24px;
+  background-color: #F1F3F4;
+  padding: 0 15px;
+  margin-right: 10px;
+  margin-top: 3px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+  transition-delay: 0;
+  -moz-transition-property: all;
+  -moz-transition-duration: 0.5s;
+  -moz-transition-timing-function: ease;
+  -moz-transition-delay: 0;
+  -o-transition-property: all;
+  -o-transition-duration: 0.5s;
+  -o-transition-timing-function: ease;
+  -o-transition-delay: 0;
+  -webkit-transition-property: all;
+  -webkit-transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease;
+  -webkit-transition-delay: 0;
+  -ms-transition-property: all;
+  -ms-transition-duration: 0.5s;
+  -ms-transition-timing-function: ease;
+  -ms-transition-delay: 0;
+  position: relative;
+  overflow: hidden;
+}
+.sk-form .sk-form-items .sk-form-row .sk-tags .sk-tag-item .sk-tag-del {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #f76464;
+  font-size: 12px;
+  width: 100%;
+  height: 100%;
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+  transition-delay: 0;
+  -moz-transition-property: all;
+  -moz-transition-duration: 0.5s;
+  -moz-transition-timing-function: ease;
+  -moz-transition-delay: 0;
+  -o-transition-property: all;
+  -o-transition-duration: 0.5s;
+  -o-transition-timing-function: ease;
+  -o-transition-delay: 0;
+  -webkit-transition-property: all;
+  -webkit-transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease;
+  -webkit-transition-delay: 0;
+  -ms-transition-property: all;
+  -ms-transition-duration: 0.5s;
+  -ms-transition-timing-function: ease;
+  -ms-transition-delay: 0;
+  text-align: center;
+  color: #ffffff;
+  overflow: hidden;
+  opacity: 0;
+  cursor: pointer;
+}
+.sk-form .sk-form-items .sk-form-row .sk-tags .sk-tag-item:hover {
+  background-color: #e8eaed;
+}
+.sk-form .sk-form-items .sk-form-row .sk-tags .sk-tag-item:hover .sk-tag-del {
+  transform: translate(0, -100%);
+  -ms-transform: translate(0, -100%);
+  -moz-transform: translate(0, -100%);
+  -webkit-transform: translate(0, -100%);
+  -o-transform: translate(0, -100%);
+  opacity: 1;
+}
 .sk-form .sk-form-items .sk-form-row .sk-date {
   height: 30px;
   position: relative;
@@ -1206,16 +1315,17 @@
   padding-top: 10px;
 }
 .sk-button {
-  height: 30px;
+  height: 26px;
   background-color: #e8eaed;
   border-radius: 15px;
   cursor: pointer;
-  border: 1px solid rgba(44, 62, 80, 0.28);
+  margin-bottom: 10px;
+  border: 0 solid rgba(44, 62, 80, 0.28);
   margin-right: 10px;
   display: inline-block;
   vertical-align: top;
-  font-size: 14px;
-  line-height: 28px;
+  font-size: 12px;
+  line-height: 26px;
   padding: 0 24px;
   transition-property: all;
   transition-duration: 0.5s;

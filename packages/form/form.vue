@@ -28,6 +28,7 @@ import SkUpload from './upload'
 import SkDate from './date'
 import SkTextarea from './textarea'
 import SkSelect from './select'
+import SkTags from './tags'
 export default {
   components: {
     SkInput,
@@ -35,7 +36,8 @@ export default {
     SkUpload,
     SkDate,
     SkTextarea,
-    SkSelect
+    SkSelect,
+    SkTags
   },
   props: {
     config: {
