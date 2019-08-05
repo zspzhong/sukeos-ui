@@ -102,6 +102,42 @@
         }
       }
 
+      .sk-number {
+        .sk-number-input {
+          &>div {
+            display: inline-block;
+            font-size: 14px;
+            vertical-align: top;
+            width: 50px;
+            text-align: center;
+            background-color: @color-bk-1;
+            cursor: pointer;
+            font-weight: bold;
+
+            &.reduce {
+              border-radius: 30px 0 0 30px;
+            }
+            &.increase {
+              border-radius: 0 30px 30px 0;
+            }
+          }
+          input {
+            width: 80px;
+            padding: 0 5px;
+            text-align: center;
+            border-radius: 0;
+          }
+          input::-webkit-outer-spin-button,
+          input::-webkit-inner-spin-button {
+              -webkit-appearance: none;
+          }
+          input[type="number"]{
+              -moz-appearance: textfield;
+          }
+        }
+        
+      }
+
       .sk-date {
         height: 30px;
         position: relative;

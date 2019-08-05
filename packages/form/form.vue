@@ -2,7 +2,7 @@
   <div class="sk-form">
     <div class="sk-form-items">
       <div class="sk-form-row"
-      v-for="(item, key) in config"
+      v-for="(item, key) in showConfig"
       :key="key"
       :style="{'padding-left': label}"
       :class="{'sk-none': item.none ? item.none(value) : false}">
@@ -29,6 +29,7 @@ import SkDate from './date'
 import SkTextarea from './textarea'
 import SkSelect from './select'
 import SkTags from './tags'
+import SkNumber from './number'
 export default {
   components: {
     SkInput,
@@ -37,7 +38,8 @@ export default {
     SkDate,
     SkTextarea,
     SkSelect,
-    SkTags
+    SkTags,
+    SkNumber
   },
   props: {
     config: {
@@ -55,6 +57,18 @@ export default {
     label: {
       type: String,
       default: '80px'
+    }
+  },
+  computed: {
+    showConfig () {
+      let arr = []
+      for (let i = 0; i < this.config.length; i++) {
+        let item = this.config[i]
+        if (!(item.none ? item.none(this.value) : false)) {
+          arr.push(item)
+        }
+      }
+      return arr
     }
   },
   methods: {

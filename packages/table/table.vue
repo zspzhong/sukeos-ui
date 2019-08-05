@@ -4,8 +4,7 @@
       <div v-for="(item, index) in top"
       :key="index"
       :style="{'width': item.width}"
-      v-if="item.type !== 'row'"
-      >
+      v-if="item.type !== 'row'">
         <span class="select" v-if="item.type === 'select'"></span>
         <span v-if="item.type === 'index'">#</span>
         <span v-if="item.type !== 'tof' && item.type !== 'index' && item.type !== 'select'">{{item.name}}</span>
@@ -38,7 +37,7 @@
       </div>
       <div class="sk-table-body-operation" v-if="operation[0]">
         <span :class="{'disabled': item.disabled && item.disabled(row), 'none': item.none && item.none(row)}"
-        @click.stop="emit(item.emit, row, item.disabled ? item.disabled(row) : false)"
+        @click.stop="emit(item.emit, row, item.disabled ? item.disabled(row) : false, index)"
         v-for="(item, key) in operation"
         :key="key">{{item.name}}</span>
       </div>
@@ -113,9 +112,9 @@ export default {
       }
       this.activeIndex = index
     },
-    emit (type, row, disabled) {
+    emit (type, row, disabled, index) {
       if (disabled) return
-      this.$emit(type, row)
+      this.$emit(type, row, index)
     },
     click (row) {
       this.$emit('click', row)

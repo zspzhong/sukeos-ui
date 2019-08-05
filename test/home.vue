@@ -1,6 +1,6 @@
 <template>
   <div>
-    <sk-table :top="top" v-model="items" @click="one"></sk-table>
+    <sk-table :top="top" v-model="items" @click="one" :operation="operation" @delete="del"></sk-table>
     <SkBtScreening :config="config" v-model="data"></SkBtScreening>
     <sk-form :config="fConfig" v-model="fData"></sk-form>
   </div>
@@ -82,20 +82,44 @@ export default{
           active: false
         }
       ],
+      operation: [
+        {
+          name: '删除',
+          emit: 'delete'
+        }
+      ],
       fConfig: [
         {
           is: 'tags',
           label: 'tags',
           key: 'tags',
           placeholder: '输入需要添加的标签'
+        },
+        {
+          is: 'number',
+          label: 'number',
+          key: 'number',
+          placeholder: '输入需要添加的标签',
+          data: {
+            min: -1,
+            max: 100,
+            disable: [2, 3, 5]
+          },
+          none: row => {
+            return row.number === 6
+          }
         }
       ],
       fData: {
-        tags: ['标签一','标签二']
+        tags: ['标签一','标签二'],
+        number: 0
       }
     }
   },
   methods: {
+    del (row, index) {
+      console.log(index)
+    },
     one (row) {
       console.log(row)
     }
