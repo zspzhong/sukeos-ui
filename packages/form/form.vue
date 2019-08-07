@@ -30,6 +30,7 @@ import SkTextarea from './textarea'
 import SkSelect from './select'
 import SkTags from './tags'
 import SkNumber from './number'
+import SkCheckbox from './checkbox'
 export default {
   components: {
     SkInput,
@@ -39,7 +40,8 @@ export default {
     SkTextarea,
     SkSelect,
     SkTags,
-    SkNumber
+    SkNumber,
+    SkCheckbox
   },
   props: {
     config: {

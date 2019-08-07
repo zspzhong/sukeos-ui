@@ -108,11 +108,49 @@ export default{
           none: row => {
             return row.number === 6
           }
+        },
+        {
+          is: 'checkbox',
+          label: '类型',
+          placeholder: 'isType',
+          key: 'isType',
+          data: {
+            option: [
+              {
+                value: 'time',
+                name: '限时'
+              },
+              {
+                value: 'number',
+                name: '限量'
+              }
+            ]
+          }
+        },
+        {
+          is: 'radio',
+          label: '类型',
+          placeholder: 'type',
+          key: 'type',
+          data: {
+            option: [
+              {
+                value: 'time',
+                name: '限时'
+              },
+              {
+                value: 'number',
+                name: '限量'
+              }
+            ]
+          }
         }
       ],
       fData: {
         tags: ['标签一','标签二'],
-        number: 0
+        number: 0,
+        isType: ['time'],
+        type: 'time'
       }
     }
   },

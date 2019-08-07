@@ -1,6 +1,8 @@
 <template>
   <div class="sk-radio">
-    <div v-for="(item, key) in data.option" :key="key" :class="{'active': item.value === temp}" @click="input(item.value)">{{item.name}}</div>
+    <div>
+      <div v-for="(item, key) in data.option" :key="key" :class="{'active': item.value === temp}" @click="input(item.value)">{{item.name}}</div>
+    </div>
   </div>
 </template>
 
