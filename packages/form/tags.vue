@@ -8,7 +8,6 @@
       <input type="text" :placeholder="placeholder" v-model="addValue">
       <div class="sk-tag-input-bt-add" @click="add">+</div>
     </div>
-    
   </div>
 </template>
 

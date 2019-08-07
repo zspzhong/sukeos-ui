@@ -32,12 +32,18 @@ export default {
   },
   computed: {
     showValue () {
-      return this.value
+      let value = parseInt(this.value)
+      if (this.data.min && value < this.data.min) {
+        value = this.data.min
+      } else if (this.data.max && value > this.data.max) {
+        value = this.data.max
+      }
+      return value
     }
   },
   methods: {
     input (event) {
-      const value = event.target.value
+      const value = parseInt(event.target.value)
       this.$emit('input', value, this.keyname)
     },
     reduce () {
@@ -60,7 +66,7 @@ export default {
       if (this.data.max && value === this.data.max) {
         return
       }
-      this.increaseFn(value)   
+      this.increaseFn(value)
     },
     increaseFn (value) {
       value++
@@ -71,7 +77,7 @@ export default {
       }
     },
     disable (value) {
-      if (!this.data.disable) return value
+      if (!this.data.disable) return false
       let statu = false
       for (let i = 0; i < this.data.disable.length; i++) {
         let dis = this.data.disable[i]
