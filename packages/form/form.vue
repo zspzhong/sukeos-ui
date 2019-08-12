@@ -31,6 +31,9 @@ import SkSelect from './select'
 import SkTags from './tags'
 import SkNumber from './number'
 import SkCheckbox from './checkbox'
+import SkPicture from './picture'
+import SkRegion from './region'
+import SkTwoInput from './twoInput'
 export default {
   components: {
     SkInput,
@@ -41,7 +44,10 @@ export default {
     SkSelect,
     SkTags,
     SkNumber,
-    SkCheckbox
+    SkCheckbox,
+    SkPicture,
+    SkRegion,
+    SkTwoInput
   },
   props: {
     config: {

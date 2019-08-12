@@ -37,27 +37,26 @@
     .sk-button-screening-label {
       width: 60px;
       opacity: .6;
-      line-height: 26px;
+      line-height: 30px;
       font-size: 14px;
     }
     .sk-button-screening-bt-list {
       font-size: 0;
       &>div {
-        font-size: 14px;
+        font-size: 12px;
         display: inline-block;
         vertical-align: top;
-        background-color: @color-bk;
-        height: 26px;
-        line-height: 26px;
+        border: 1px solid @color-solid;
+        height: 22px;
+        line-height: 22px;
+        margin-top: 3px;
         padding: 0 20px;
         margin-right: 10px;
         border-radius: 15px;
         .transition(all, 0.5s, ease);
         cursor: pointer;
-        opacity: .8;
         &.active {
           background-color: @color-bk-1;
-          opacity: 1;
         }
         &:hover {
           background-color: @color-bk-1;

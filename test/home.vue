@@ -11,7 +11,8 @@ export default{
   data () {
     return {
       data: {
-        one: 'one'
+        one: 'one',
+        one1: ''
       },
       config: [
         {
@@ -90,10 +91,19 @@ export default{
       ],
       fConfig: [
         {
-          is: 'tags',
+          is: 'twoInput',
           label: 'tags',
           key: 'tags',
           placeholder: '输入需要添加的标签'
+        },
+        {
+          is: 'region',
+          label: 'region',
+          key: 'region',
+          placeholder: '输入需要添加的标签',
+          data: {
+            type: 'city'
+          }
         },
         {
           is: 'number',
@@ -144,13 +154,27 @@ export default{
               }
             ]
           }
+        },
+        {
+          is: 'picture',
+          label: '封面',
+          key: 'imageUrl',
+          data: {
+            url: '/survey/api/admin/tool/image-upload',
+            headers: {},
+            response: res => {
+              return res.result.url
+            }
+          }
         }
       ],
       fData: {
         tags: ['标签一','标签二'],
         number: 0,
         isType: ['time'],
-        type: 'time'
+        type: 'time',
+        picture: '',
+        region: {}
       }
     }
   },
