@@ -1,6 +1,6 @@
 <template>
   <div>
-    <sk-table :top="top" v-model="items" @click="one" :operation="operation" @delete="del"></sk-table>
+    <sk-table @click="activeRow" :top="top" v-model="items" :operation="operation" @delete="del"></sk-table>
     <SkBtScreening :config="config" v-model="data"></SkBtScreening>
     <sk-form :config="fConfig" v-model="fData"></sk-form>
   </div>
@@ -179,6 +179,9 @@ export default{
     }
   },
   methods: {
+    activeRow (row, index) {
+      console.log(row)
+    },
     del (row, index) {
       console.log(index)
     },
