@@ -20,18 +20,18 @@
       :style="{'width': item.width}"
       >
         <div class="select" v-if="item.type === 'select'" @click="select(row)"></div>
-        <div v-if="item.type === 'index'" @click="click(row)">{{size * (page - 1) + index + 1}}</div>
+        <div v-if="item.type === 'index'" @click="click(row, index)">{{size * (page - 1) + index + 1}}</div>
 
-        <div class="sk-table-body-nickname" v-if="item.type === 'nickname'" @click="click(row)">
+        <div class="sk-table-body-nickname" v-if="item.type === 'nickname'" @click="click(row, index)">
           <img :src="row[item.img]">
           <span>{{item.key ? row[item.key] : item.value(row)}}</span>
         </div>
 
-        <div class="sk-table-body-qrcode" v-if="item.type === 'qrcode'" @click="click(row)">
+        <div class="sk-table-body-qrcode" v-if="item.type === 'qrcode'" @click="click(row, index)">
           <i></i>
         </div>
 
-        <div v-if="!item.type" @click="click(row)">
+        <div v-if="!item.type" @click="click(row, index)">
           <span>{{item.key ? row[item.key] : item.value(row)}}</span>
         </div>
       </div>
@@ -116,8 +116,8 @@ export default {
       if (disabled) return
       this.$emit(type, row, index)
     },
-    click (row) {
-      this.$emit('click', row)
+    click (row, index) {
+      this.$emit('click', row, index)
     }
   }
 }
