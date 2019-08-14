@@ -8,7 +8,7 @@
     		<div class="sk-picture-modal-close" @click="close()">X</div>
     		<div></div>
     		<div class="center">
-					<canvas></canvas>
+					<canvas id="canvas" ref="canvas" width="800" height="600"></canvas>
     		</div>
     	</div>
     </div>
@@ -65,11 +65,40 @@ export default {
   },
   methods: {
     changeImage (e) {
-      this.file = e.target.files[0]
-      this.show = true
+      let imgSrc = window.URL.createObjectURL(e.target.files[0])
+      let img = new Image()
+      img.src = imgSrc
+      let this_ = this
+      img.onload = function () {
+        this_.drawToCanvas(this.result)
+      }
+
+      // const file = e.target.files[0]
+      // this.show = true
+      // let reader = new FileReader()
+      // reader.readAsDataURL(file)
+      // reader.onload = function(e) {
+      //   drawToCanvas(this.result)
+      // }
+      // function drawToCanvas(imgData) {
+      //   let canvas = document.querySelector('#canvas')
+      //   canvas.width = 300
+      //   canvas.height = 400
+      //   let ctx = this.canvas.getContext("2d")
+      //   var img = new Image;
+      //   img.src = imgData;
+      //   img.onload = function() {
+      //       ctx.drawImage(img,0,0,300,400)
+      //       strDataURI = cvs.toDataURL()
+      //   }
+      // }
     },
     close () {
     	this.show = false
+    },
+    drawToCanvas (imgData) {
+      let canvas = this.$refs.canvas
+      console.log(canvas)
     }
   }
 }
