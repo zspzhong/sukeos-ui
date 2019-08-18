@@ -365,9 +365,12 @@
           height: 100%;
           background-color: rgba(0, 0, 0, 0.4);
 
+          &.sk-picture-modal-none {
+            left: 100%;
+          }
+
           &>div {
-            width: 600px;
-            height: 400px;
+            padding: 30px;
             position: absolute;
             top: 50%;
             left: 50%;
@@ -388,6 +391,45 @@
               .transition(all, 0.5s, ease);
               &:hover {
                 background-color: rgba(44, 62, 80, 0.2);
+              }
+            }
+            .sk-picture-modal-center {
+              .sk-picture-modal-center-img {
+                width: 400px;
+                height: 400px;
+                position: relative;
+                background-color: #ffffff;
+                border: 1px solid #dddddd;
+                img {
+                  max-width: 400px;
+                  max-height: 400px;
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  .translate(-50%, -50%);
+                }
+                canvas {
+                  width: 400px;
+                  height: 400px;
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  .translate(-50%, -50%);
+                }
+              }
+            }
+            .sk-picture-modal-bt {
+              text-align: center;
+              font-size: 0;
+              padding-top: 30px;
+              span {
+                display: inline-block;
+                font-size: 12px;
+                line-height: 24px;
+                border-radius: 12px;
+                background-color: #e8eaed;
+                padding: 0 20px;
+                cursor: pointer;
               }
             }
           }

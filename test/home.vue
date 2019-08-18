@@ -164,7 +164,11 @@ export default{
             headers: {},
             response: res => {
               return res.result.url
-            }
+            },
+            showWidth: 200,
+            showHeight: 100,
+            width: 400,
+            height: 200
           }
         }
       ],

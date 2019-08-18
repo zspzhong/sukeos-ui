@@ -807,9 +807,11 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
 }
+.sk-form .sk-form-items .sk-form-row .sk-picture .sk-picture-modal.sk-picture-modal-none {
+  left: 100%;
+}
 .sk-form .sk-form-items .sk-form-row .sk-picture .sk-picture-modal > div {
-  width: 600px;
-  height: 400px;
+  padding: 30px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -854,6 +856,51 @@
 }
 .sk-form .sk-form-items .sk-form-row .sk-picture .sk-picture-modal > div .sk-picture-modal-close:hover {
   background-color: rgba(44, 62, 80, 0.2);
+}
+.sk-form .sk-form-items .sk-form-row .sk-picture .sk-picture-modal > div .sk-picture-modal-center .sk-picture-modal-center-img {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+}
+.sk-form .sk-form-items .sk-form-row .sk-picture .sk-picture-modal > div .sk-picture-modal-center .sk-picture-modal-center-img img {
+  max-width: 400px;
+  max-height: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+.sk-form .sk-form-items .sk-form-row .sk-picture .sk-picture-modal > div .sk-picture-modal-center .sk-picture-modal-center-img canvas {
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+.sk-form .sk-form-items .sk-form-row .sk-picture .sk-picture-modal > div .sk-picture-modal-bt {
+  text-align: center;
+  font-size: 0;
+  padding-top: 30px;
+}
+.sk-form .sk-form-items .sk-form-row .sk-picture .sk-picture-modal > div .sk-picture-modal-bt span {
+  display: inline-block;
+  font-size: 12px;
+  line-height: 24px;
+  border-radius: 12px;
+  background-color: #e8eaed;
+  padding: 0 20px;
+  cursor: pointer;
 }
 .sk-form .sk-form-items .sk-form-row .sk-picture i {
   background-image: url('../src/icon/i-upload.svg');
