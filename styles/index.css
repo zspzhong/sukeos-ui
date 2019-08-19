@@ -806,11 +806,13 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1001;
 }
 .sk-form .sk-form-items .sk-form-row .sk-picture .sk-picture-modal.sk-picture-modal-none {
   left: 100%;
 }
 .sk-form .sk-form-items .sk-form-row .sk-picture .sk-picture-modal > div {
+  height: 420px;
   padding: 30px;
   position: absolute;
   top: 50%;
@@ -857,6 +859,9 @@
 .sk-form .sk-form-items .sk-form-row .sk-picture .sk-picture-modal > div .sk-picture-modal-close:hover {
   background-color: rgba(44, 62, 80, 0.2);
 }
+.sk-form .sk-form-items .sk-form-row .sk-picture .sk-picture-modal > div .sk-picture-modal-center .imgCanvas {
+  opacity: 0;
+}
 .sk-form .sk-form-items .sk-form-row .sk-picture .sk-picture-modal > div .sk-picture-modal-center .sk-picture-modal-center-img {
   width: 400px;
   height: 400px;
@@ -891,7 +896,7 @@
 .sk-form .sk-form-items .sk-form-row .sk-picture .sk-picture-modal > div .sk-picture-modal-bt {
   text-align: center;
   font-size: 0;
-  padding-top: 30px;
+  padding-top: 10px;
 }
 .sk-form .sk-form-items .sk-form-row .sk-picture .sk-picture-modal > div .sk-picture-modal-bt span {
   display: inline-block;

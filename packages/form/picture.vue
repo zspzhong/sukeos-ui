@@ -1,7 +1,7 @@
 <template>
   <div class="sk-picture" :style="{'width': showWidth + 10 + 'px', 'height': showHeight + 10 + 'px'}">
   	<i></i>
-    <img :src="showSrc" alt="" :style="{'width': showWidth + 'px', 'height': showHeight + 'px'}">
+    <img :src="value" alt="" :style="{'width': showWidth + 'px', 'height': showHeight + 'px'}">
     <input type="file" @change="changeImage">
     <div class="sk-picture-modal"
     :class="{'sk-picture-modal-none': !show}">
@@ -23,7 +23,7 @@
           <div class="sk-picture-modal-bt">
             <span @click="post()">确定</span>
           </div>
-          <canvas id="imgCanvas" :width="width + 'px'" :height="height + 'px'" ref="imgCanvas"></canvas>
+          <canvas class="imgCanvas" id="imgCanvas" :width="width + 'px'" :height="height + 'px'" ref="imgCanvas"></canvas>
     		</div>
     	</div>
     </div>
@@ -194,6 +194,17 @@ export default {
         let width = img.width
         let height = img.height
 
+        let max = width > height ? width : height
+        let min = width > height ? height : width
+
+        if (max < 400) {
+          min = min * 400 / max
+          max = 400
+
+          width = width > height ? max : min
+          height = height > width ? max : min
+        }
+
         let jw = rect[2]
         let jh = rect[3]
         let jx = rect[0]
@@ -220,9 +231,34 @@ export default {
         let ix = width > height ? 0 : (height - width) / 2
         let iy = height > width ? 0 : (width - height) / 2
 
-        ictx.drawImage(img, ix-jx, iy-jy, height, width)
+        ictx.drawImage(img, ix-jx, iy-jy, width, height)
         this_.showSrc = this_.imgCanvas.toDataURL("image/png")
+        this_.ajaxFile()
+      }
+    },
+    ajaxFile () {
+      const file = dataURLtoFile(this.showSrc, 'one.png')
+      let param = new FormData()
+      let config = {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+          ...this.data.headers
+        }
+      }
+      param.append('file', file, file.name)
+      axios.post(this.data.url, param, config).then(response => {
+        this.show = false
+        this.$emit('input', this.data.response(response.data), this.keyname)
+      })
 
+      // 转成fle
+      function dataURLtoFile(dataurl, filename) {
+        var arr = dataurl.split(','), mime = arr[0].match(/:(.*?);/)[1],
+            bstr = atob(arr[1]), n = bstr.length, u8arr = new Uint8Array(n);
+        while(n--){
+            u8arr[n] = bstr.charCodeAt(n);
+        }
+        return new File([u8arr], filename, {type:mime});
       }
     },
     // 移动选中矩形

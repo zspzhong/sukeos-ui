@@ -160,8 +160,10 @@ export default{
           label: '封面',
           key: 'imageUrl',
           data: {
-            url: '/survey/api/admin/tool/image-upload',
-            headers: {},
+            url: '',
+            headers: {
+              'X-Token': ''
+            },
             response: res => {
               return res.result.url
             },
