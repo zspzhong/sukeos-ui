@@ -1,8 +1,8 @@
 <template>
-  <div class="sk-picture" :style="{'width': showWidth + 10 + 'px', 'height': showHeight + 10 + 'px'}">
+  <div class="sk-picture">
   	<i></i>
-    <img :src="value" alt="" :style="{'width': showWidth + 'px', 'height': showHeight + 'px'}">
-    <input type="file" @change="changeImage">
+    <img :src="value" alt="">
+    <input type="file" @change="changeImage" class="sk-picture-img-input">
     <div class="sk-picture-modal"
     :class="{'sk-picture-modal-none': !show}">
     	<div>
@@ -19,6 +19,17 @@
             @mousemove="canvasMove($event)"
             @mouseup="canvasUp($event)"
             @mouseleave="canvasLeave($event)"></canvas>
+          </div>
+          <div class="sk-picture-modal-input">
+            <div>
+              <input type="number" :value="width" @input="inputWidth">
+              <div>px</div>
+            </div>
+            <span>x</span>
+            <div>
+              <input type="number" :value="height" @input="inputHeight">
+              <div>px</div>
+            </div>
           </div>
           <div class="sk-picture-modal-bt">
             <span @click="post()">确定</span>
@@ -66,15 +77,19 @@ export default {
       poorX: 0,
       poorY: 0,
       type: '',
-      showSrc: ''
+      showSrc: '',
+      zWidth: 0,
+      zHeight: 0
   	}
   },
   computed: {
   	width () {
-  		return this.data.width ? this.data.width : 100
+      let width = this.data.width ? this.data.width : 200
+  		return this.zWidth === 0 ? width : this.zWidth
   	},
   	height () {
-  		return this.data.height ? this.data.height : 100
+      let height = this.data.height ? this.data.height : 200
+  		return this.zHeight === 0 ? height : this.zHeight
   	},
   	showWidth () {
   		return this.data.showWidth ? this.data.showWidth : 100
@@ -87,6 +102,31 @@ export default {
 
   },
   methods: {
+    changWandH () {
+      let ctx = this.canvas.getContext("2d")
+      ctx.clearRect(0,0, 400, 400)
+      this.initRect(0, 0, 400, 400)
+      this.canvasInit()
+      this.selectRect()
+    },
+    inputWidth (e) {
+      const value = parseInt(event.target.value)
+      if (value === NaN) {
+        this.zWidth = 100
+        return
+      }
+      this.zWidth = value
+      this.changWandH()
+    },
+    inputHeight (e) {
+      const value = parseInt(event.target.value)
+      if (value === NaN) {
+        this.zHeight = 100
+        return
+      }
+      this.zHeight = value
+      this.changWandH()
+    },
     changeImage (e) {
       this.show = true
       this.imgSrc = window.URL.createObjectURL(e.target.files[0])
@@ -236,6 +276,7 @@ export default {
         this_.ajaxFile()
       }
     },
+    // 上传图片
     ajaxFile () {
       const file = dataURLtoFile(this.showSrc, 'one.png')
       let param = new FormData()
@@ -292,7 +333,7 @@ export default {
     canvasLeave (e) {
       this.clickState = false
     },
-    // 生成矩形框
+    // 生成矩形框 弃用
     fillRect () {
       const rect = this.rect
       let ctx = this.canvas.getContext("2d")
@@ -302,7 +343,7 @@ export default {
       ctx.strokeStyle = '#000000'
       ctx.strokeRect(rect[0], rect[1], rect[2], rect[3])
     },
-    // 生成图片
+    // 生成图片 弃用
     gruntImages () {
       const imgData = this.imgData
       let ctx = this.canvas.getContext("2d")

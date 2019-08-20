@@ -1,6 +1,6 @@
 <template>
-  <div class="sk-modal-page" v-if="showStatus" @click="close()">
-    <div :style="{'width': width}" @click.stop="">
+  <div class="sk-modal-page" v-if="showStatus" @click="closeBkBt()">
+    <div :style="{'width': width,'height': height}" @click.stop="">
       <div class="sk-modal-close" @click="close()">X</div>
       <div class="sk-modal-title">{{title}}</div>
       <div class="sk-modal-body" :class="{'sk-modal-body-foot': foot}">
@@ -24,6 +24,10 @@ export default {
       type: String,
       default: '600px'
     },
+    height: {
+      type: String,
+      default: 'auto'
+    },
     value: {
       type: Boolean,
       default: false
@@ -31,15 +35,28 @@ export default {
     foot: {
       type: Boolean,
       default: true
+    },
+    closeBk: {
+      type: Boolean,
+      default: true
     }
   },
   computed: {
     showStatus () {
       return this.value
+    },
+    showCloseBk () {
+      return this.closeBk
     }
   },
   methods: {
     close () {
+      this.$emit('input', false)
+    },
+    closeBkBt () {
+      if (!this.showCloseBk) {
+        return
+      }
       this.$emit('input', false)
     }
   }
