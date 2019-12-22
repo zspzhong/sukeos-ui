@@ -19,6 +19,7 @@
       :key="key"
       :style="{'width': item.width}"
       >
+        <div class="box" v-if="item.type === 'box'" :class="{'active': item.active && item.active(row)}"  @click="emit(item.emit, row, item.disabled ? item.disabled(row) : false, key)"></div>
         <div class="select" v-if="item.type === 'select'" @click="select(row)"></div>
         <div v-if="item.type === 'index'" @click="click(row, index)">{{size * (page - 1) + index + 1}}</div>
 

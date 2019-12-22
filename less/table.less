@@ -57,6 +57,44 @@
         display: none;
       }
 
+      .box {
+        border: 1px solid @color-main;
+        height: 16px;
+        width: 16px;
+        margin: 6px 0;
+        cursor: pointer;
+        .transition(all, 0.5s, ease);
+        cursor: pointer;
+        position: relative;
+        opacity: .6;
+
+        &::before {
+          width: 12px;
+          height: 12px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          content: '';
+          .translate(-50%, -50%);
+          background-color: @color-main;
+          opacity: 0;
+          .transition(all, 0.5s, ease);
+        }
+
+        &:hover {
+          opacity: 1;
+        }
+
+        &.active {
+          &::before {
+            opacity: .8;
+          }
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+
       &.sk-table-body-operation {
         span {
           margin-right: 10px;

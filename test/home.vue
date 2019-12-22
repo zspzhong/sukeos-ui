@@ -1,6 +1,6 @@
 <template>
   <div>
-    <sk-table @click="activeRow" :top="top" v-model="items" :operation="operation" @delete="del"></sk-table>
+    <sk-table @click="activeRow" @select="select" :top="top" v-model="items" :operation="operation" @delete="del"></sk-table>
     <SkBtScreening :config="config" v-model="data"></SkBtScreening>
     <sk-form :config="fConfig" v-model="fData"></sk-form>
   </div>
@@ -66,6 +66,15 @@ export default{
         {
           type: 'index',
           width: '40px'
+        },
+        {
+          type: 'box',
+          name: '熟悉',
+          emit: 'select',
+          width: '40px',
+          active: row => {
+            return !row.active
+          }
         },
         {
           name: '用户',
@@ -193,6 +202,9 @@ export default{
     },
     one (row) {
       console.log(row)
+    },
+    select (row) {
+      this.items[1].active = !this.items[1].active
     }
   }
 }
