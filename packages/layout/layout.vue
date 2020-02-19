@@ -1,9 +1,11 @@
 <template>
-  <div class="sk-layout" :class="{'sk-layout-show-menu': showMenu}">
-    <Menu :menu="menu" :path="path" @logout="logout"></Menu>
+  <div class="sk-layout sk-layout-show-top" :class="{'sk-layout-show-menu': showMenu}">
+    <TopMenu :topInfo="topInfo" @logout="logout"></TopMenu>
+    <Menu :menu="menu" :path="path"></Menu>
     <div class="sk-layout-content">
-      <div :class="{'sk-layout-hidden-sub-menu': subMenu.length === 0}">
-        <SubMenu :menu="subMenu" :path="path"></SubMenu>
+      <!-- <div :class="{'sk-layout-hidden-sub-menu': subMenu.length === 0}"> -->
+      <div class="sk-layout-hidden-sub-menu">
+        <!-- <SubMenu :menu="subMenu" :path="path"></SubMenu> -->
         <slot></slot>
       </div>
     </div>
@@ -11,18 +13,26 @@
 </template>
 
 <script>
+import TopMenu from './top-menu'
 import Menu from './menu'
-import SubMenu from './sub-menu'
+// import SubMenu from './sub-menu'
 export default {
   components: {
     Menu,
-    SubMenu
+    // SubMenu,
+    TopMenu
   },
   props: {
     menu: {
       type: Array,
       default: () => {
         return []
+      }
+    },
+    topInfo: {
+      type: Object,
+      default: () => {
+        return {}
       }
     },
     subMenu: {

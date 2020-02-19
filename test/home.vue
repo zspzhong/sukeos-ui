@@ -1,8 +1,10 @@
 <template>
   <div>
-    <sk-table @click="activeRow" @select="select" :top="top" v-model="items" :operation="operation" @delete="del"></sk-table>
-    <SkBtScreening :config="config" v-model="data"></SkBtScreening>
-    <sk-form :config="fConfig" v-model="fData"></sk-form>
+    <sk-layout :menu="menuFirst" :showMenu="showMenu" :path="path" :subMenu="menuSecond" @logout="logout">
+      <sk-table @click="activeRow" @select="select" :top="top" v-model="items" :operation="operation" @delete="del"></sk-table>
+      <SkBtScreening :config="config" v-model="data"></SkBtScreening>
+      <sk-form :config="fConfig" v-model="fData"></sk-form>
+    </sk-layout>
   </div>
 </template>
 
@@ -10,6 +12,101 @@
 export default{
   data () {
     return {
+      menuFirst: [
+        {
+          icon: 'home',
+          name: '首页',
+          path: '/a'
+        },
+        {
+          icon: 'employee',
+          name: '你好',
+          menu: [
+            {
+              icon: 'home',
+              name: '你好',
+              path: '/a',
+            },
+            {
+              icon: 'home',
+              name: '你好',
+              path: '/a',
+            }
+          ]
+        },
+        {
+          icon: 'logs',
+          name: '你好',
+          menu: [
+            {
+              icon: 'home',
+              name: '你好',
+              path: '/a',
+            },
+            {
+              icon: 'home',
+              name: '你好',
+              path: '/a',
+            }
+          ]
+        },
+        {
+          icon: 'auth',
+          name: '你好',
+          menu: [
+            {
+              icon: 'home',
+              name: '你好',
+              path: '/a',
+            },
+            {
+              icon: 'home',
+              name: '你好',
+              path: '/a',
+            }
+          ]
+        },
+        {
+          icon: 'user',
+          name: '你好',
+          menu: [
+            {
+              icon: 'home',
+              name: '你好',
+              path: '/a',
+            },
+            {
+              icon: 'home',
+              name: '你好',
+              path: '/a',
+            }
+          ]
+        },
+        {
+          icon: 'teamwork',
+          name: '你好',
+          menu: [
+            {
+              icon: 'home',
+              name: '你好',
+              path: '/a',
+            },
+            {
+              icon: 'home',
+              name: '你好',
+              path: '/a',
+            }
+          ]
+        }
+      ],
+      menuSecond: [
+        // {
+        //   path: '/a/a',
+        //   name: '二级菜单'
+        // }
+      ],
+      showMenu: true,
+      path: '/a',
       data: {
         one: 'one',
         one1: ''
