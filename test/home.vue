@@ -4,6 +4,7 @@
       <sk-table @click="activeRow" @select="select" :top="top" v-model="items" :operation="operation" @delete="del"></sk-table>
       <SkBtScreening :config="config" v-model="data"></SkBtScreening>
       <sk-form :config="fConfig" v-model="fData"></sk-form>
+      <SkButton><div>fdf</div></SkButton>
     </sk-layout>
   </div>
 </template>
@@ -252,11 +253,15 @@ export default{
             option: [
               {
                 value: 'time',
-                name: '限时'
+                name: '上午'
               },
               {
                 value: 'number',
-                name: '限量'
+                name: '下午'
+              },
+              {
+                value: 'number',
+                name: '全天'
               }
             ]
           }
