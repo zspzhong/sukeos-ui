@@ -32,7 +32,10 @@ export default {
     topInfo: {
       type: Object,
       default: () => {
-        return {}
+        return {
+          name: 'SUKEOS UI',
+          username: 'Null'
+        }
       }
     },
     subMenu: {

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <sk-layout :menu="menuFirst" :showMenu="showMenu" :path="path" :subMenu="menuSecond" @logout="logout">
+    <sk-layout :menu="menuFirst" :showMenu="showMenu" :path="path" :subMenu="menuSecond" @logout="logout" :topInfo="topInfo">
       <sk-table @click="activeRow" @select="select" :top="top" v-model="items" :operation="operation" @delete="del"></sk-table>
       <SkBtScreening :config="config" v-model="data"></SkBtScreening>
       <sk-form :config="fConfig" v-model="fData"></sk-form>
@@ -106,6 +106,10 @@ export default{
         //   name: '二级菜单'
         // }
       ],
+      topInfo: {
+        name: 'SUKEOS',
+        username: 'ER'
+      },
       showMenu: true,
       path: '/a',
       data: {
@@ -283,7 +287,18 @@ export default{
             width: 400,
             height: 200
           }
-        }
+        },
+        {
+          is: 'uploadFile',
+          label: '上传文件',
+          data: {
+            url: '',
+            headers: {},
+            response: res => {
+              return res.result.url
+            }
+          }
+        },
       ],
       fData: {
         tags: ['标签一','标签二'],

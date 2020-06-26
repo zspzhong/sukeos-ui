@@ -25,6 +25,7 @@
 import SkInput from './input'
 import SkRadio from './radio'
 import SkUpload from './upload'
+import SkUploadFile from './uploadFile'
 import SkDate from './date'
 import SkTextarea from './textarea'
 import SkSelect from './select'
@@ -47,7 +48,8 @@ export default {
     SkCheckbox,
     SkPicture,
     SkRegion,
-    SkTwoInput
+    SkTwoInput,
+    SkUploadFile
   },
   props: {
     config: {

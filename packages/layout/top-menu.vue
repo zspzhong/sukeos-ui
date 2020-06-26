@@ -7,7 +7,7 @@
     <div class="sk-layout-portrait-user-info" v-show="isShow" @click="changShow()">
       <div @click.stop="">
         <div class="sk-layout-portrait-user-portrait"></div>
-        <div class="sk-layout-portrait-user-name">Admin</div>
+        <div class="sk-layout-portrait-user-name">{{topInfo.username}}</div>
         <div class="sk-layout-portrait-user-logout" @click="logout">退出登录</div>
       </div>
     </div>
@@ -26,7 +26,8 @@ export default {
       type: Object,
       default: () => {
         return {
-          name: 'SUKEOS UI'
+          name: 'SUKEOS UI',
+          username: 'Null'
         }
       }
     }

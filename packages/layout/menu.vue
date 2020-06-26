@@ -15,7 +15,6 @@
             <div>{{secondary.name}}</div>
           </div>
         </div>
-        
        </div>
     </div>
   </div>
@@ -64,6 +63,7 @@ export default {
       this.isOpen = data
     },
     openUrl (path) {
+      // console.log(path)
       this.$router.push({ path: path })
     }
   }
