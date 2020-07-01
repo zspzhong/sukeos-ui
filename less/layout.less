@@ -176,8 +176,52 @@
         height: 30px;
         .transition(all, 0.5s, ease);
         overflow: hidden;
-        
+
         &.active {
+          // height: auto;
+          .sk-layout-menu-body-title {
+            color: #ffffff;
+            background-color: @color-default-main;
+
+            i {
+              &.home {
+                background-image: url('../src/icon/i-home-active.svg');
+              }
+              &.employee {
+                background-image: url('../src/icon/i-employee-active.svg');
+              }
+              &.logs {
+                background-image: url('../src/icon/i-logs-active.svg');
+              }
+              &.logout {
+                background-image: url('../src/icon/i-logout-active.svg');
+              }
+              &.auth {
+                background-image: url('../src/icon/i-auth-active.svg');
+              }
+              &.user {
+                background-image: url('../src/icon/i-user-active.svg');
+              }
+              &.teamwork {
+                background-image: url('../src/icon/i-teamwork-active.svg');
+              }
+              &.attend {
+                background-image: url('../src/icon/i-attend-active.svg');
+              }
+              &.statistics {
+                background-image: url('../src/icon/i-statistics-active.svg');
+              }
+              &.approval {
+                background-image: url('../src/icon/i-approval-active.svg');
+              }
+              &.announcement {
+                background-image: url('../src/icon/i-announcement-active.svg');
+              }
+            }
+          }
+        }
+        
+        &.open {
           height: auto;
 
           .sk-layout-menu-body-title {
@@ -283,6 +327,10 @@
             cursor: pointer;
 
             &:hover {
+              color: @color-default-main;
+            }
+
+            &.active {
               color: @color-default-main;
             }
 

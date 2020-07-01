@@ -1,7 +1,7 @@
 <template>
   <div class="sk-layout sk-layout-show-top" :class="{'sk-layout-show-menu': showMenu}">
     <TopMenu :topInfo="topInfo" @logout="logout"></TopMenu>
-    <Menu :menu="menu" :path="path"></Menu>
+    <Menu :menu="menu" :path="path" :pathSecond="pathSecond"></Menu>
     <div class="sk-layout-content">
       <!-- <div :class="{'sk-layout-hidden-sub-menu': subMenu.length === 0}"> -->
       <div class="sk-layout-hidden-sub-menu">
@@ -45,6 +45,10 @@ export default {
       }
     },
     path: {
+      type: String,
+      default: ''
+    },
+    pathSecond: {
       type: String,
       default: ''
     },
