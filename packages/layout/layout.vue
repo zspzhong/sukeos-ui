@@ -1,14 +1,19 @@
 <template>
-  <div class="sk-layout sk-layout-show-top" :class="{'sk-layout-show-menu': showMenu}">
-    <TopMenu :topInfo="topInfo" @logout="logout"></TopMenu>
-    <Menu :menu="menu" :path="path" :pathSecond="pathSecond"></Menu>
-    <div class="sk-layout-content">
-      <!-- <div :class="{'sk-layout-hidden-sub-menu': subMenu.length === 0}"> -->
-      <div class="sk-layout-hidden-sub-menu">
-        <!-- <SubMenu :menu="subMenu" :path="path"></SubMenu> -->
-        <slot></slot>
-      </div>
-    </div>
+  <div class="sk-layout" :class="{'sk-layout-show-menu': showMenu}">
+    <section class="sk-layout-section">
+      <Menu :menu="menu" :path="path" :pathSecond="pathSecond" :topInfo="topInfo"></Menu>
+      <section class="sk-layout-content">
+        <TopMenu :topInfo="topInfo" @logout="logout"></TopMenu>
+        <div class="sk-layout-content-box">
+          <!-- <div :class="{'sk-layout-hidden-sub-menu': subMenu.length === 0}"> -->
+          <!-- <div class="sk-layout-hidden-sub-menu"> -->
+            <!-- <SubMenu :menu="subMenu" :path="path"></SubMenu> -->
+            <slot></slot>
+          <!-- </div> -->
+        </div>
+      </section>
+    </section>
+    
   </div>
 </template>
 

@@ -1,9 +1,24 @@
 <template>
   <div class="sk-layout-top-menu">
-    <div class="sk-project-name">{{topInfo.name}}</div>
-    <div class="sk-layout-portrait">
-      <div class="sk-layout-portrait-default" @click="changShow()"></div>
+    <!-- <div class="sk-project-name">{{topInfo.name}}</div> -->
+    <div class="sk-layout-top-bread-line">
+      <!-- <span>
+        <span>首页</span>
+        <span class="sk-bread-line-interval">></span>
+      </span>
+      <span>
+        <span>首页</span>
+      </span> -->
     </div>
+    <div class="sk-layout-top-right">
+      <div class="sk-layout-top-userInfo" @click="changShow()">
+        <i class="sk-layout-top-portrait"></i>
+        <span>{{topInfo.username}}</span>
+      </div>
+    </div>
+    <!-- <div class="sk-layout-portrait">
+      <div class="sk-layout-portrait-default" @click="changShow()"></div>
+    </div> -->
     <div class="sk-layout-portrait-user-info" v-show="isShow" @click="changShow()">
       <div @click.stop="">
         <div class="sk-layout-portrait-user-portrait"></div>

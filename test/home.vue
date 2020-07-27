@@ -1,12 +1,12 @@
 <template>
-  <div>
-    <sk-layout :menu="menuFirst" :showMenu="showMenu" :path="path" :subMenu="menuSecond" @logout="logout" :topInfo="topInfo">
+  <sk-layout :menu="menuFirst" :showMenu="showMenu" :path="path" :subMenu="menuSecond" @logout="logout" :topInfo="topInfo">
+    <div style="background-color: #ffffff; padding: 30px">
       <sk-table @click="activeRow" @select="select" :top="top" v-model="items" :operation="operation" @delete="del"></sk-table>
       <SkBtScreening :config="config" v-model="data"></SkBtScreening>
       <sk-form :config="fConfig" v-model="fData"></sk-form>
       <SkButton><div>fdf</div></SkButton>
-    </sk-layout>
-  </div>
+    </div>
+  </sk-layout>
 </template>
 
 <script>
@@ -17,27 +17,28 @@ export default{
         {
           icon: 'home',
           name: '首页',
-          path: '/a'
+          path: '/a',
+          menu: []
         },
         {
           icon: 'employee',
-          name: '你好',
+          name: '用户管理',
           menu: [
             {
               icon: 'home',
-              name: '你好',
+              name: '微信用户',
               path: '/a',
             },
             {
               icon: 'home',
-              name: '你好',
+              name: '什么用户',
               path: '/a',
             }
           ]
         },
         {
           icon: 'logs',
-          name: '你好',
+          name: '日志管理',
           menu: [
             {
               icon: 'home',
@@ -53,7 +54,7 @@ export default{
         },
         {
           icon: 'auth',
-          name: '你好',
+          name: '权限管理',
           menu: [
             {
               icon: 'home',
@@ -69,7 +70,7 @@ export default{
         },
         {
           icon: 'user',
-          name: '你好',
+          name: '信息管理',
           menu: [
             {
               icon: 'home',
@@ -85,7 +86,7 @@ export default{
         },
         {
           icon: 'teamwork',
-          name: '你好',
+          name: '测试管理',
           menu: [
             {
               icon: 'home',
