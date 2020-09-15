@@ -5,6 +5,7 @@
       <SkBtScreening :config="config" v-model="data"></SkBtScreening>
       <sk-form :config="fConfig" v-model="fData"></sk-form>
       <SkButton><div>fdf</div></SkButton>
+      <sk-input-search></sk-input-search>
     </div>
   </sk-layout>
 </template>
