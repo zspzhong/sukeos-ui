@@ -19,7 +19,7 @@
             <div @click="clickYear(item + startYear)" :class="{'active': year === item + startYear}" v-for="(item, index) in 12" :key="index + 'year'">{{item + startYear}}</div>
           </div>
           <div class="year-chang">
-            <div class="i-left" @click="yearChangLeft()"><</div>
+            <div class="i-left" @click="yearChangLeft()">&lt;</div>
             <div class="i-right" @click="yearChangRight()">></div>
           </div>
         </div>
