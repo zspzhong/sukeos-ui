@@ -28,7 +28,7 @@
     "browser-sync": "^2.26.3",
     "css-loader": "^2.1.1",
     "file-loader": "^3.0.1",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-less": "^4.0.1",
     "gulp-plumber": "^1.2.0",
     "less-loader": "^4.1.0",
